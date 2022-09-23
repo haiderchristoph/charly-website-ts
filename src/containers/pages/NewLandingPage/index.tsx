@@ -5,9 +5,11 @@ import Page from 'containers/pages/Page'
 import PersonalImage from './assets/christoph-haider.jpg'
 import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
+import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
 import { SectionId, ThemeColor } from 'utils/constants'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
 import ArrowLink from 'components/controls/ArrowLink'
+import Socials from 'components/displays/Socials'
 
 // This is a helper object before intl is in place
 const pageText = {
@@ -26,11 +28,14 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     flexDirection: 'column',
     '@media (min-width: 769px)': {
+      backgroundColor: '#fff',
+      color: '#000',
+      transform: 'rotate(-5deg)',
       position: 'relative',
       borderRadius: '2px',
       width: '34.375rem',
       height: '22.25rem',
-      border: '3px solid #1d1d1d',
+      border: '3px solid #27B8B3',
       boxShadow: '1px 1px 14px 2px #27B8B3',
     },
   },
@@ -43,7 +48,6 @@ const useStyles = createUseStyles({
     fontSize: '2rem',
     fontWeight: 600,
     margin: 0,
-    marginTop: '1.5rem',
     marginBottom: '0.5rem',
   },
   nickName: {
@@ -73,13 +77,49 @@ const useStyles = createUseStyles({
     textAlign: 'center',
     margin: '0.25rem',
   },
-  descriptionHighlight: {
+  descriptionTextName: {
     fontWeight: 600,
   },
   image: {
-    width: '8rem',
+    width: '10.5rem',
     borderRadius: '50%',
     boxShadow: `0 0 0 5px ${ThemeColor.backgroundDark}, 0 0 0 10px ${ThemeColor.primaryMain}`,
+    flexShrink: 0,
+    '@media (min-width: 769px)': {
+      boxShadow: `0 0 0 5px #fff, 0 0 0 10px ${ThemeColor.primaryMain}`,
+      marginRight: '1.5rem',
+    },
+  },
+  contentContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    '@media (min-width: 769px)': {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+  },
+  leftContainer: {},
+  rightContainer: {
+    justifyContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '1.5rem',
+    '@media (min-width: 769px)': {
+      marginTop: '0',
+    },
+  },
+  hand: {
+    width: '34rem',
+    position: 'absolute',
+    top: '-32.5rem',
+    right: '-37.75rem',
+    transform: 'rotate(-90deg)',
+  },
+  descriptionTextJob: {
+    color: ThemeColor.primaryMain,
+    fontWeight: 600,
   },
 })
 
@@ -88,7 +128,7 @@ const useStyles = createUseStyles({
  */
 const LandingPage = () => {
   const classes = useStyles()
-  const isTabletOrHigher = useMediaQuery('(min-width: 769px)')
+  const isTabletOrBigger = useMediaQuery('(min-width: 769px)')
   return (
     <Page
       id={SectionId.LANDING_PAGE}
@@ -98,7 +138,7 @@ const LandingPage = () => {
       className={classes.page}
     >
       <div className={classes.container}>
-        {isTabletOrHigher && (
+        {isTabletOrBigger && (
           <>
             <TriangleSvg
               style={{ position: 'absolute', left: '6px', bottom: '6px' }}
@@ -122,24 +162,37 @@ const LandingPage = () => {
                 transform: 'rotate(180deg)',
               }}
             />
+            <Socials />
+            <HandSvg className={classes.hand} />
           </>
         )}
-        <img className={classes.image} src={PersonalImage} alt="personal" />
-        <h2 className={classes.heading}>
-          {pageText.heading}
-          <span className={classes.nickName}>{pageText.nickName}</span>
-        </h2>
-        <div>
-          <p
-            className={classNames(
-              classes.descriptionText,
-              classes.descriptionHighlight
-            )}
-          >
-            {pageText.name}
-          </p>
-          <p className={classes.descriptionText}>{pageText.academics}</p>
-          <p className={classes.descriptionText}>{pageText.job}</p>
+        <div className={classes.contentContainer}>
+          <img className={classes.image} src={PersonalImage} alt="personal" />
+          <div className={classes.rightContainer}>
+            <h2 className={classes.heading}>
+              {pageText.heading}
+              <span className={classes.nickName}>{pageText.nickName}</span>
+            </h2>
+            <div>
+              <p
+                className={classNames(
+                  classes.descriptionText,
+                  classes.descriptionTextName
+                )}
+              >
+                {pageText.name}
+              </p>
+              <p className={classes.descriptionText}>{pageText.academics}</p>
+              <p
+                className={classNames(
+                  classes.descriptionText,
+                  classes.descriptionTextJob
+                )}
+              >
+                {pageText.job}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <ArrowLink />

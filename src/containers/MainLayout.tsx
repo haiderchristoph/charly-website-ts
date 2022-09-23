@@ -1,13 +1,13 @@
 import React from 'react'
 import { createUseStyles } from 'react-jss'
-import LandingPage from 'containers/pages/LandingPage'
+import LandingPage from 'containers/pages/NewLandingPage'
 import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
 import Navigation from 'containers/navigation/NavigationHandler'
 
 const useStyles = createUseStyles({
   container: {
-    display: 'flex',
+    // display: 'flex',
   },
   scrollContainer: {
     maxHeight: '100vh',
@@ -31,11 +31,11 @@ const MainLayout = () => {
   return (
     <div className={classes.container}>
       <Navigation />
-      <div className={classes.scrollContainer}>
-        <LandingPage />
-        <AboutPage />
-        <ContactPage />
-      </div>
+      {/* <div className={classes.scrollContainer}> */}
+      <LandingPage />
+      <AboutPage />
+      <ContactPage />
+      {/* </div> */}
     </div>
   )
 }

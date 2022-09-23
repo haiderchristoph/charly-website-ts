@@ -1,5 +1,5 @@
 import React from 'react'
-import VerticalNavigation from '../VerticalNavigation'
+// import VerticalNavigation from '../VerticalNavigation'
 import MobileNavigation from '../MobileNavigation'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
 
@@ -10,7 +10,8 @@ import useMediaQuery from 'utils/hooks/useMediaQuery'
  */
 const NavigationHandler = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
-  return isDesktop ? <VerticalNavigation /> : <MobileNavigation />
+  return isDesktop ? null : <MobileNavigation />
+  // return isDesktop ? <VerticalNavigation /> : <MobileNavigation />
 }
 
 export default NavigationHandler
