@@ -2,7 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
-import PersonalImage from './assets/christoph-haider.jpg'
+// import PersonalImage from './assets/personal-dark.png'
+import PersonalImage from './assets/personal-light.png'
 import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
 import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
@@ -83,10 +84,9 @@ const useStyles = createUseStyles({
   image: {
     width: '10.5rem',
     borderRadius: '50%',
-    boxShadow: `0 0 0 5px ${ThemeColor.backgroundDark}, 0 0 0 10px ${ThemeColor.primaryMain}`,
+    border: `4px solid ${ThemeColor.primaryMain}`,
     flexShrink: 0,
     '@media (min-width: 769px)': {
-      boxShadow: `0 0 0 5px #fff, 0 0 0 10px ${ThemeColor.primaryMain}`,
       marginRight: '1.5rem',
     },
   },
