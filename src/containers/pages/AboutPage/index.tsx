@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
 import SkillBar from 'components/displays/SkillBar'
 import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { skills } from 'utils/skills'
 import { ReactComponent as QuoteIcon } from './assets/quote-left-svgrepo-com.svg'
-import HeadSketchImage from './assets/head.png'
-import HeadLaughSketchImage from './assets/head2.png'
+import PersonalImage from './assets/christoph-haider.jpg'
 
 // This is a helper object before intl is in place
 const pageText = {
@@ -61,7 +60,7 @@ const useStyles = createUseStyles({
     fontWeight: '600',
     margin: '1rem 0',
   },
-  headSvg: {
+  personalImage: {
     width: '100%',
     maxWidth: '12rem',
     height: 'auto',
@@ -125,7 +124,6 @@ const useStyles = createUseStyles({
  */
 const WorkAndExperiencePage = () => {
   const classes = useStyles()
-  const [isHovered, setIsHovered] = useState(false)
   return (
     <Page id={SectionId.SKILLS_AND_EXPERIENCE} isFullHeight={true}>
       <div className={classes.container}>
@@ -133,10 +131,8 @@ const WorkAndExperiencePage = () => {
         <div className={classes.contentContainer}>
           <div className={classes.descriptionContainer}>
             <img
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className={classes.headSvg}
-              src={isHovered ? HeadLaughSketchImage : HeadSketchImage}
+              className={classes.personalImage}
+              src={PersonalImage}
               alt="head sketch"
             />
             <div className={classes.descriptionTitle}>

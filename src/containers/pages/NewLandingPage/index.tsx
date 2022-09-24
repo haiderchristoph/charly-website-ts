@@ -29,15 +29,15 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     flexDirection: 'column',
     '@media (min-width: 769px)': {
-      backgroundColor: '#fff',
+      backgroundColor: '#F5F5F5',
       color: '#000',
       transform: 'rotate(-5deg)',
       position: 'relative',
       borderRadius: '2px',
       width: '34.375rem',
       height: '22.25rem',
-      border: '3px solid #27B8B3',
-      boxShadow: '1px 1px 14px 2px #27B8B3',
+      border: `3px solid ${ThemeColor.primaryMain}`,
+      boxShadow: `1px 1px 8px 2px ${ThemeColor.primaryMain}`,
     },
   },
   page: {

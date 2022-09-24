@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { ThemeColor } from 'utils/constants'
+import { SectionId, ThemeColor, SocialLinks } from 'utils/constants'
 import { ReactComponent as FacebookSvg } from './assets/facebook.svg'
 import { ReactComponent as GithubSvg } from './assets/github.svg'
 import { ReactComponent as LinkedinSvg } from './assets/linkedin.svg'
@@ -31,12 +31,11 @@ const useStyles = createUseStyles({
 
 const Socials = () => {
   const classes = useStyles()
-  const url = 'https://www.google.com'
   return (
     <div className={classes.socialsContainer}>
       <a
         className={classes.link}
-        href="https://github.com/haidercharly"
+        href={SocialLinks.GITHUB}
         rel="noreferrer"
         target="_blank"
       >
@@ -44,16 +43,16 @@ const Socials = () => {
       </a>
       <a
         className={classes.link}
-        href="https://www.facebook.com/christoph.haider2"
+        href={SocialLinks.FACEBOOK}
         rel="noreferrer"
         target="_blank"
       >
         <FacebookSvg className={classes.socialIcon} />
       </a>
-      <a className={classes.link} href={url} rel="noreferrer" target="_blank">
+      <a className={classes.link} href={SocialLinks.LINKEDIN} rel="noreferrer" target="_blank">
         <LinkedinSvg className={classes.socialIcon} />
       </a>
-      <a className={classes.link} href={url} rel="noreferrer" target="_blank">
+      <a className={classes.link} href={`#${SectionId.CONTACT}`}>
         <MailSvg className={classes.socialIcon} />
       </a>
     </div>

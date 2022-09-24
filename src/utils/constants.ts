@@ -18,3 +18,9 @@ export const Typography = {
   fontSizeTitle: '1.5rem',
   fontSizeHeadline: '2rem',
 }
+
+export const SocialLinks = {
+  GITHUB: 'https://github.com/haidercharly',
+  FACEBOOK: 'https://www.facebook.com/christoph.haider2',
+  LINKEDIN: 'https://www.linkedin.com/in/christoph-charly-haider-a6935a251',
+}
