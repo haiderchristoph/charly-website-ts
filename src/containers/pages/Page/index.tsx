@@ -8,6 +8,7 @@ const useStyles = createUseStyles({
     padding: '1rem',
     backgroundColor: ThemeColor.backgroundDark,
     color: ThemeColor.textWhite,
+    overflow: 'hidden',
   },
   horizontalCenteredContainer: {
     display: 'flex',
