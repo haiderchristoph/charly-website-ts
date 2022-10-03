@@ -10,7 +10,7 @@ const pageText = {
 
 const useStyles = createUseStyles({
   containerLink: {
-    color: '#27B8B3',
+    color: ThemeColor.primaryMain,
     borderRadius: '2px',
     border: `2px solid ${ThemeColor.primaryMain}`,
     boxShadow: `0px 0px 2px 1px ${ThemeColor.primaryMain}`,
@@ -26,8 +26,7 @@ const useStyles = createUseStyles({
     margin: '0 auto',
     marginTop: '3rem',
     position: 'absolute',
-    bottom: '-8rem',
-    transform: 'rotate(5deg)',
+    bottom: '8rem',
     '&:hover $icon': {
       animation: '$iconRotateIn 0.5s ease',
       animationFillMode: 'forwards',

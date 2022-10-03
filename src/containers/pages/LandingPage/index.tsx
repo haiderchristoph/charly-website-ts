@@ -192,8 +192,8 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <ArrowLink />
       </div>
+      <ArrowLink />
     </Page>
   )
 }

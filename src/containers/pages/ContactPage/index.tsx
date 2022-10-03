@@ -119,27 +119,30 @@ const useStyles = createUseStyles({
     padding: '0.5rem',
     minWidth: '7rem',
     backgroundColor: 'transparent',
-    border: `1px solid white`,
-    color: 'white',
+    border: `1px solid ${ThemeColor.primaryMain}`,
+    color: ThemeColor.primaryMain,
     '&$submitButton_wasHovered': {
       animation: '$buttonFillOut 0.5s forwards',
     },
     '&:hover, &:focus': {
       border: `1px solid ${ThemeColor.primaryMain}`,
-      animation: '$buttonFillIn 1s forwards',
+      animation: '$buttonFillIn 0.5s forwards',
     },
   },
   submitButton_wasHovered: {},
   '@keyframes buttonFillIn': {
     to: {
       backgroundColor: ThemeColor.primaryMain,
+      color: ThemeColor.textWhite,
     },
   },
   '@keyframes buttonFillOut': {
     from: {
       backgroundColor: ThemeColor.primaryMain,
+      color: ThemeColor.textWhite,
     },
     to: {
+      color: ThemeColor.primaryMain,
       backgroundColor: 'transparent',
     },
   },
