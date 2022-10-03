@@ -12,20 +12,38 @@ const useStyles = createUseStyles({
   containerLink: {
     color: '#27B8B3',
     borderRadius: '2px',
-    border: `1px solid ${ThemeColor.primaryMain}`,
-    padding: '0.55rem',
+    border: `2px solid ${ThemeColor.primaryMain}`,
+    boxShadow: `0px 0px 2px 1px ${ThemeColor.primaryMain}`,
+    padding: '0.5rem',
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
-    width: '6rem',
-    fontSize: '1rem',
+    width: '7rem',
+    fontSize: '1.25rem',
+    fontWeight: 500,
     justifyContent: 'space-between',
     paddingRight: '0.75rem',
     margin: '0 auto',
     marginTop: '3rem',
+    position: 'absolute',
+    bottom: '-8rem',
+    transform: 'rotate(5deg)',
     '&:hover $icon': {
       animation: '$iconRotateIn 0.5s ease',
       animationFillMode: 'forwards',
+    },
+    '&:focus-within $icon': {
+      animation: '$iconRotateIn 0.5s ease',
+      animationFillMode: 'forwards',
+    },
+    '&:hover, &:focus-within': {
+      animation: '$buttonFillIn 0.5s ease forwards',
+    },
+  },
+  '@keyframes buttonFillIn': {
+    to: {
+      backgroundColor: ThemeColor.primaryMain,
+      color: ThemeColor.textWhite,
     },
   },
   '@keyframes iconRotateIn': {

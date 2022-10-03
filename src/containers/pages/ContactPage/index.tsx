@@ -95,7 +95,8 @@ const useStyles = createUseStyles({
   },
   formContainer_notVisible: {},
   textInput: {
-    width: '-webkit-fill-available',
+    width: '100%',
+    boxSizing: 'border-box',
     margin: '0.5rem 0',
     border: '2px solid transparent',
     fontSize: Typography.fontSizeText,

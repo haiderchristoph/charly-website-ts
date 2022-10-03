@@ -1,6 +1,6 @@
 import React from 'react'
 import { createUseStyles } from 'react-jss'
-import LandingPage from 'containers/pages/NewLandingPage'
+import LandingPage from 'containers/pages/LandingPage'
 import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
 import Navigation from 'containers/navigation/NavigationHandler'
