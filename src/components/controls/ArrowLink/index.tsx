@@ -13,7 +13,7 @@ interface StyleProps {
 }
 
 const useStyles = createUseStyles({
-  containerLink: {
+  button: {
     color: ThemeColor.primaryMain,
     borderRadius: '2px',
     border: `2px solid ${ThemeColor.primaryMain}`,
@@ -22,13 +22,14 @@ const useStyles = createUseStyles({
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
-    width: '7rem',
     fontSize: Typography.fontSizeText_Big,
     fontWeight: 500,
     justifyContent: 'space-between',
     paddingRight: '0.75rem',
     margin: '0 auto',
     marginTop: '3rem',
+    background: 'transparent',
+    cursor: 'pointer',
     position: ({ isTabletOrBigger }: StyleProps) =>
       isTabletOrBigger ? 'absolute' : 'unset',
     bottom: '8rem',
@@ -77,9 +78,13 @@ const ArrowLink = ({ isTabletOrBigger }: { isTabletOrBigger: boolean }) => {
   const classes = useStyles({ isTabletOrBigger })
   const [wasHovered, setWasHovered] = useState(false)
   return (
-    <a
-      className={classNames(classes.containerLink)}
-      href={`#${SectionId.SKILLS_AND_EXPERIENCE}`}
+    <button
+      className={classes.button}
+      onClick={() =>
+        document
+          .querySelector(`#${SectionId.SKILLS_AND_EXPERIENCE}`)
+          ?.scrollIntoView({ behavior: 'smooth' })
+      }
       onMouseEnter={() => setWasHovered(true)}
     >
       {pageText.moreInfo}
@@ -88,7 +93,7 @@ const ArrowLink = ({ isTabletOrBigger }: { isTabletOrBigger: boolean }) => {
           [classes.icon_wasHovered]: wasHovered,
         })}
       />
-    </a>
+    </button>
   )
 }
 

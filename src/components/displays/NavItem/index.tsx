@@ -10,10 +10,13 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     padding: '0.75rem 0.25rem',
   },
-  link: {
+  button: {
     textDecoration: 'none',
     color: ThemeColor.textWhite,
     fontWeight: 500,
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
     fontSize: Typography.fontSizeText_Big,
     '&:hover, &:focus, &$link_isActive': {
       textDecoration: 'underline',
@@ -27,34 +30,26 @@ const useStyles = createUseStyles({
 /**
  * NavItem
  */
-const NavItem = ({
-  name,
-  sectionId,
-  isActive = false,
-  onClick,
-}: NavItemProps) => {
+const NavItem = ({ name, isActive = false, onClick }: NavItemProps) => {
   const classes = useStyles()
-  console.log(isActive)
   return (
-    <li className={classes.container}>
-      <a
-        className={classNames(classes.link, {
+    <li key={`${name}`} className={classes.container}>
+      <button
+        className={classNames(classes.button, {
           [classes.link_isActive]: isActive,
         })}
-        href={`#${sectionId}`}
-        {...(onClick ? { onClick } : null)}
+        onClick={() => onClick()}
       >
         {name}
-      </a>
+      </button>
     </li>
   )
 }
 
 interface NavItemProps {
   name: string
-  sectionId: string
   isActive?: boolean
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  onClick: () => void
 }
 
 export default NavItem

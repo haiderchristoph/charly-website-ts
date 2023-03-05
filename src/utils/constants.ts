@@ -3,6 +3,7 @@ export const SectionId = {
   SKILLS_AND_EXPERIENCE: 'section-skills-and-experience',
   ABOUT_ME: 'section-about-me',
   TECH_STACK: 'section-tech-stack',
+  TECH_STACK_DESCRIPTION: 'section-tech-stack-description',
   CONTACT: 'section-contact',
 }
 

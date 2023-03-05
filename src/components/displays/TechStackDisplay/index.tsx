@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
-import { ThemeColor, Typography } from 'utils/constants'
+import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { ReactComponent as BasicsSvg } from './assets/basics.svg'
 import { ReactComponent as VSCodeSvg } from './assets/vscode.svg'
 import { ReactComponent as CodeQualitySvg } from './assets/codequality.svg'
@@ -9,6 +9,7 @@ import { ReactComponent as FigmaSvg } from './assets/figma.svg'
 import { ReactComponent as TypescriptSvg } from './assets/typescript.svg'
 import { ReactComponent as DockerSvg } from './assets/docker.svg'
 import { ReactComponent as ReactSvg } from './assets/react.svg'
+import useMediaQuery from 'utils/hooks/useMediaQuery'
 
 const useStyles = createUseStyles({
   container: {
@@ -122,7 +123,8 @@ const items = [
 const TechStackDisplay = () => {
   const classes = useStyles()
   const [itemId, setItemId] = useState(TechStackItemId.BASICS)
-
+  const descriptionRef = useRef<HTMLDivElement>(null)
+  const isMobile = useMediaQuery('(max-width: 769px)')
   const currentItem = items.find(({ id }) => id === itemId) || items[0]
 
   return (
@@ -131,8 +133,14 @@ const TechStackDisplay = () => {
         {items.map(({ id, Icon }) => (
           <>
             <button
+              key={`stack-${id}`}
               className={classNames(classes.button)}
-              onClick={() => setItemId(id)}
+              onClick={() => {
+                setItemId(id)
+                if (isMobile) {
+                  descriptionRef.current?.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
             >
               <Icon id={id} className={classes.svg} />
               {itemId === id && (
@@ -142,7 +150,11 @@ const TechStackDisplay = () => {
           </>
         ))}
       </div>
-      <div className={classes.descriptionContainer}>
+      <div
+        ref={descriptionRef}
+        id={SectionId.TECH_STACK_DESCRIPTION}
+        className={classes.descriptionContainer}
+      >
         <h3 className={classes.subheading}>{currentItem.title}</h3>
         <p className={classes.description}>{currentItem.description}</p>
       </div>

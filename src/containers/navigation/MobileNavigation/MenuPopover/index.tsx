@@ -96,6 +96,12 @@ const MenuPopover = ({
   shouldAnimateOut,
 }: MenuPopoverProps) => {
   const classes = useStyles()
+  console.log('here we are')
+  const handleClose = (id: string) => {
+    console.log(id)
+    document.querySelector(`#${id}`)?.scrollIntoView({ behavior: 'smooth' })
+    onClose()
+  }
   return (
     <>
       {isOpen && (
@@ -114,23 +120,19 @@ const MenuPopover = ({
             <ul className={classes.navList}>
               <NavItem
                 name="home"
-                sectionId={SectionId.LANDING_PAGE}
-                onClick={onClose}
+                onClick={() => handleClose(SectionId.LANDING_PAGE)}
               />
               <NavItem
                 name="about"
-                sectionId={SectionId.SKILLS_AND_EXPERIENCE}
-                onClick={onClose}
+                onClick={() => handleClose(SectionId.SKILLS_AND_EXPERIENCE)}
               />
               <NavItem
                 name="tech stack"
-                sectionId={SectionId.TECH_STACK}
-                onClick={onClose}
+                onClick={() => handleClose(SectionId.TECH_STACK)}
               />
               <NavItem
                 name="contact"
-                sectionId={SectionId.CONTACT}
-                onClick={onClose}
+                onClick={() => handleClose(SectionId.CONTACT)}
               />
             </ul>
             <Socials />
@@ -144,7 +146,7 @@ const MenuPopover = ({
 interface MenuPopoverProps {
   isOpen: boolean
   shouldAnimateOut: boolean
-  onClose: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  onClose: () => void
 }
 
 export default MenuPopover

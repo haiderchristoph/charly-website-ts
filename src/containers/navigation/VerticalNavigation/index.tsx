@@ -48,9 +48,9 @@ const VerticalNavigation = () => {
         <LogoSvg className={classes.logo} />
       </a>
       <ul className={classes.navList}>
-        <NavItem name="home" sectionId={SectionId.LANDING_PAGE} />
+        {/* <NavItem name="home" sectionId={SectionId.LANDING_PAGE} />
         <NavItem name="about" sectionId={SectionId.SKILLS_AND_EXPERIENCE} />
-        <NavItem name="contact" sectionId={SectionId.CONTACT} />
+        <NavItem name="contact" sectionId={SectionId.CONTACT} /> */}
       </ul>
       <Socials />
     </nav>
