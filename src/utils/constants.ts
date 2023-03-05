@@ -2,6 +2,7 @@ export const SectionId = {
   LANDING_PAGE: 'section-landing',
   SKILLS_AND_EXPERIENCE: 'section-skills-and-experience',
   ABOUT_ME: 'section-about-me',
+  TECH_STACK: 'section-tech-stack',
   CONTACT: 'section-contact',
 }
 
@@ -14,7 +15,10 @@ export const ThemeColor = {
 }
 
 export const Typography = {
+  fontSizeText_Small: '0.85rem',
   fontSizeText: '1rem',
+  fontSizeText_Medium: '1.125rem',
+  fontSizeText_Big: '1.25rem',
   fontSizeTitle: '1.5rem',
   fontSizeHeadline: '2rem',
 }

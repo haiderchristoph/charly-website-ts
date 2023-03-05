@@ -1,7 +1,7 @@
 import React from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import { ThemeColor } from 'utils/constants'
+import { ThemeColor, Typography } from 'utils/constants'
 
 const useStyles = createUseStyles({
   container: {
@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
     textDecoration: 'none',
     color: ThemeColor.textWhite,
     fontWeight: 500,
-    fontSize: '1.25rem',
+    fontSize: Typography.fontSizeText_Big,
     '&:hover, &:focus, &$link_isActive': {
       textDecoration: 'underline',
       textDecorationColor: ThemeColor.primaryMain,

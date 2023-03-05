@@ -4,17 +4,14 @@ import LandingPage from 'containers/pages/LandingPage'
 import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
 import Navigation from 'containers/navigation/NavigationHandler'
+import TechStackPage from 'containers/pages/TechStackPage'
+import Footer from 'containers/pages/Footer'
 
 const useStyles = createUseStyles({
   container: {
-    // display: 'flex',
-  },
-  scrollContainer: {
-    maxHeight: '100vh',
-    overflow: 'scroll',
-    width: '100%',
-    paddingRight: '7.5rem',
-    scrollBehavior: 'smooth',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4rem',
   },
   '@media (max-width: 1024px)': {
     scrollContainer: {
@@ -31,11 +28,11 @@ const MainLayout = () => {
   return (
     <div className={classes.container}>
       <Navigation />
-      {/* <div className={classes.scrollContainer}> */}
       <LandingPage />
       <AboutPage />
+      <TechStackPage />
       <ContactPage />
-      {/* </div> */}
+      <Footer />
     </div>
   )
 }

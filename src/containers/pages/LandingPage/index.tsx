@@ -5,7 +5,7 @@ import PersonalImage from './assets/personal-light.png'
 import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
 import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
-import { SectionId, ThemeColor } from 'utils/constants'
+import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
 import ArrowLink from 'components/controls/ArrowLink'
 import Socials from 'components/displays/Socials'
@@ -72,7 +72,7 @@ const useStyles = createUseStyles({
     '100%': { backgroundPosition: '0 100%' },
   },
   descriptionText: {
-    fontSize: '1.25rem',
+    fontSize: Typography.fontSizeText_Big,
     textAlign: 'center',
     margin: '0.25rem',
   },

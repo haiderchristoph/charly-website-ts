@@ -26,8 +26,6 @@ const useStyles = createUseStyles({
 
 /**
  * MobileNavigation
- *
- * Mobile Navigation version
  */
 const MobileNavigation = () => {
   const classes = useStyles()

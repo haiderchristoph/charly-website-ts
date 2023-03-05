@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
 import { ReactComponent as DownArrowIcon } from './assets/down-arrow.svg'
-import { SectionId, ThemeColor } from 'utils/constants'
+import { SectionId, ThemeColor, Typography } from 'utils/constants'
 
 const pageText = {
   moreInfo: 'more info',
@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     width: '7rem',
-    fontSize: '1.25rem',
+    fontSize: Typography.fontSizeText_Big,
     fontWeight: 500,
     justifyContent: 'space-between',
     paddingRight: '0.75rem',

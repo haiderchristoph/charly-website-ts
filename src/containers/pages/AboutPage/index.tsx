@@ -9,7 +9,7 @@ import PersonalImage from './assets/christoph-haider.jpg'
 
 // This is a helper object before intl is in place
 const pageText = {
-  heading: 'About',
+  heading: 'about',
   descriptionTitle: `Me, myself and I`,
   descriptionHeadline: `I'm a Front-End Developer for Usersnap in Linz, Austria.`,
   descriptionLower: `I'm a design enthusiast with a passion for everything related to frontend.`,
@@ -35,7 +35,7 @@ const useStyles = createUseStyles({
     maxWidth: '78rem',
   },
   descriptionHeadline: {
-    fontSize: '1.25rem',
+    fontSize: Typography.fontSizeText_Big,
     lineHeight: 1.25,
     margin: 0,
     fontWeight: 600,
@@ -125,7 +125,7 @@ const useStyles = createUseStyles({
 const WorkAndExperiencePage = () => {
   const classes = useStyles()
   return (
-    <Page id={SectionId.SKILLS_AND_EXPERIENCE} isFullHeight={true}>
+    <Page id={SectionId.SKILLS_AND_EXPERIENCE}>
       <div className={classes.container}>
         <h2 className={classes.heading}>{pageText.heading}</h2>
         <div className={classes.contentContainer}>

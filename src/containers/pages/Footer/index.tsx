@@ -1,16 +1,14 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
+import { ThemeColor, Typography } from 'utils/constants'
 
 const useStyles = createUseStyles({
   container: {
     width: '100%',
-    color: 'white',
+    color: ThemeColor.textWhite,
     textAlign: 'center',
     opacity: '0.3',
-    fontSize: '0.85rem',
+    fontSize: Typography.fontSizeText_Small,
     marginBottom: '2rem',
-    position: 'absolute',
-    bottom: '1rem',
   },
   year: {
     fontSize: '1rem',

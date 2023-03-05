@@ -123,6 +123,11 @@ const MenuPopover = ({
                 onClick={onClose}
               />
               <NavItem
+                name="tech stack"
+                sectionId={SectionId.TECH_STACK}
+                onClick={onClose}
+              />
+              <NavItem
                 name="contact"
                 sectionId={SectionId.CONTACT}
                 onClick={onClose}

@@ -4,14 +4,13 @@ import classNames from 'classnames'
 import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { EmailJSCredentials } from 'utils/credentials'
 import Page from 'containers/pages/Page'
-import Footer from 'containers/pages/Footer'
 import emailjs from '@emailjs/browser'
 
 const MESSAGE_MAX_LENGTH = 300
 
 // This is a helper object before intl is in place
 const pageText = {
-  heading: 'Contact',
+  heading: 'contact',
   question: 'Have a question or want to work together?',
   emailPlaceholder: 'Your email',
   namePlaceholder: 'Your name',
@@ -39,7 +38,7 @@ const useStyles = createUseStyles({
     fontSize: Typography.fontSizeHeadline,
   },
   question: {
-    fontSize: '1.125rem',
+    fontSize: Typography.fontSizeText_Medium,
     color: ThemeColor.primaryMain,
     textAlign: 'center',
     marginBottom: '1.5rem',
@@ -115,7 +114,7 @@ const useStyles = createUseStyles({
   },
   submitButton: {
     cursor: 'pointer',
-    fontSize: '1.125rem',
+    fontSize: Typography.fontSizeText_Medium,
     padding: '0.5rem',
     minWidth: '7rem',
     backgroundColor: 'transparent',
@@ -303,7 +302,6 @@ const ContactPage = () => {
             </div>
           )}
         </div>
-        <Footer />
       </div>
     </Page>
   )

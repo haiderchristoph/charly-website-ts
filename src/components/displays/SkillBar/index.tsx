@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
 import { useIsVisible } from 'react-is-visible'
-import { ThemeColor } from 'utils/constants'
+import { ThemeColor, Typography } from 'utils/constants'
 
 const useStyles = (props: any) =>
   createUseStyles({
@@ -22,7 +22,7 @@ const useStyles = (props: any) =>
       position: 'absolute',
       right: '0.25rem',
       bottom: '0.25rem',
-      fontSize: '0.85rem',
+      fontSize: Typography.fontSizeText_Small,
       animation: '$scoreOpacity 4s forwards',
     },
     skillFill: {
