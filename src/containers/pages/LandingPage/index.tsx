@@ -193,7 +193,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <ArrowLink />
+      <ArrowLink isTabletOrBigger={isTabletOrBigger} />
     </Page>
   )
 }

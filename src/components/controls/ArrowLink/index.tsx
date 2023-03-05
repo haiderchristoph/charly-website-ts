@@ -8,6 +8,10 @@ const pageText = {
   moreInfo: 'more info',
 }
 
+interface StyleProps {
+  isTabletOrBigger: boolean
+}
+
 const useStyles = createUseStyles({
   containerLink: {
     color: ThemeColor.primaryMain,
@@ -25,7 +29,8 @@ const useStyles = createUseStyles({
     paddingRight: '0.75rem',
     margin: '0 auto',
     marginTop: '3rem',
-    position: 'absolute',
+    position: ({ isTabletOrBigger }: StyleProps) =>
+      isTabletOrBigger ? 'absolute' : 'unset',
     bottom: '8rem',
     '&:hover $icon': {
       animation: '$iconRotateIn 0.5s ease',
@@ -68,8 +73,8 @@ const useStyles = createUseStyles({
 /**
  * A button fashioned link to another section
  */
-const ArrowLink = () => {
-  const classes = useStyles()
+const ArrowLink = ({ isTabletOrBigger }: { isTabletOrBigger: boolean }) => {
+  const classes = useStyles({ isTabletOrBigger })
   const [wasHovered, setWasHovered] = useState(false)
   return (
     <a

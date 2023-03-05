@@ -46,7 +46,8 @@ const useStyles = createUseStyles({
   descriptionContainer: {
     margin: '0 auto',
     padding: '1rem',
-    maxWidth: '80%',
+    width: '80%',
+    maxWidth: '46rem',
   },
   activeItemIndicator: {
     backgroundColor: ThemeColor.primaryMain,

@@ -28,6 +28,7 @@ const useStyles = createUseStyles({
   contentContainer: {
     width: '100%',
     maxWidth: '78rem',
+    marginTop: '3rem',
   },
 })
 
