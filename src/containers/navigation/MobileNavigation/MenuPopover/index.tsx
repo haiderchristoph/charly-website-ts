@@ -96,7 +96,6 @@ const MenuPopover = ({
   shouldAnimateOut,
 }: MenuPopoverProps) => {
   const classes = useStyles()
-  console.log('here we are')
   const handleClose = (id: string) => {
     console.log(id)
     document.querySelector(`#${id}`)?.scrollIntoView({ behavior: 'smooth' })
