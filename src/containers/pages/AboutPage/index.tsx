@@ -11,8 +11,8 @@ import PersonalImage from './assets/christoph-haider.jpg'
 const pageText = {
   heading: 'about',
   descriptionTitle: `Me, myself and I`,
-  descriptionHeadline: `I'm a Front-End Developer for Usersnap in Linz, Austria.`,
-  descriptionLower: `I'm a design enthusiast with a passion for everything related to frontend.`,
+  descriptionHeadline: `I'm a front-end developer for Usersnap in\xa0Linz,\xa0Austria.`,
+  descriptionLower: `I'm a design enthusiast with a passion for everything related\xa0to\xa0front-end.`,
   workTogether: `Let's work together!`,
   quote: `Whoever claims to have mastered these skills 100% may be lying about other things in their life too.`,
   quoteMe: ` - me, early 2019`,
