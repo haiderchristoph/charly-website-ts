@@ -46,7 +46,7 @@ const MobileNavigation = () => {
     }, 1000)
   }
   return (
-    <div>
+    <>
       <div
         className={classNames(classes.burgerMenuButton, {
           [classes.burgerMenuButton_close]: isMenuOpen,
@@ -65,7 +65,7 @@ const MobileNavigation = () => {
         onClose={handleClose}
         shouldAnimateOut={shouldAnimateOut}
       />
-    </div>
+    </>
   )
 }
 

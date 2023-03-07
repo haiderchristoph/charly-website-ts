@@ -26,16 +26,27 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    backgroundColor: '#F5F5F5',
+    color: '#000000',
+    transform: 'rotate(-5deg)',
+    position: 'relative',
+    borderRadius: '2px',
+    border: `3px solid ${ThemeColor.primaryMain}`,
+    boxShadow: `1px 1px 8px 2px ${ThemeColor.primaryMain}`,
+    // keep aspect ratio of card
+    width: '85%',
+    height: '54vw',
+    maxHeight: '34.375rem',
+    maxWidth: '22.25rem',
+    minWidth: '22.25rem',
+    minHeight: '30rem',
+    paddingBottom: '4rem',
     '@media (min-width: 769px)': {
-      backgroundColor: '#F5F5F5',
-      color: '#000',
-      transform: 'rotate(-5deg)',
-      position: 'relative',
-      borderRadius: '2px',
-      width: '34.375rem',
-      height: '22.25rem',
-      border: `3px solid ${ThemeColor.primaryMain}`,
-      boxShadow: `1px 1px 8px 2px ${ThemeColor.primaryMain}`,
+      maxWidth: '34.375rem',
+      maxHeight: '22.25rem',
+      minHeight: '22rem',
+      minWidth: '30rem',
+      paddingBottom: 0,
     },
   },
   page: {
@@ -93,12 +104,10 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     flexDirection: 'column',
     '@media (min-width: 769px)': {
-      display: 'flex',
       flexDirection: 'row',
     },
   },
-  leftContainer: {},
-  rightContainer: {
+  innerContainer: {
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -109,11 +118,15 @@ const useStyles = createUseStyles({
     },
   },
   hand: {
-    width: '34rem',
     position: 'absolute',
-    top: '-32.5rem',
-    right: '-37.75rem',
-    transform: 'rotate(-90deg)',
+    top: '-12.25rem',
+    left: '14.75rem',
+    height: '24rem',
+    '@media (min-width: 769px)': {
+      top: '-16.75rem',
+      left: '24rem',
+      height: '33rem',
+    },
   },
   descriptionTextJob: {
     color: ThemeColor.primaryMain,
@@ -136,37 +149,31 @@ const LandingPage = () => {
       className={classes.page}
     >
       <div className={classes.container}>
-        {isTabletOrBigger && (
-          <>
-            <TriangleSvg
-              style={{ position: 'absolute', left: '6px', bottom: '6px' }}
-            />
-            <TriangleSvg
-              style={{
-                position: 'absolute',
-                right: '6px',
-                top: '6px',
-                transform: 'rotate(180deg)',
-              }}
-            />
-            <CirclesSvg
-              style={{ position: 'absolute', left: '6px', top: '6px' }}
-            />
-            <CirclesSvg
-              style={{
-                position: 'absolute',
-                right: '6px',
-                bottom: '6px',
-                transform: 'rotate(180deg)',
-              }}
-            />
-            <Socials />
-            <HandSvg className={classes.hand} />
-          </>
-        )}
+        <TriangleSvg
+          style={{ position: 'absolute', left: '6px', bottom: '6px' }}
+        />
+        <TriangleSvg
+          style={{
+            position: 'absolute',
+            right: '6px',
+            top: '6px',
+            transform: 'rotate(180deg)',
+          }}
+        />
+        <CirclesSvg style={{ position: 'absolute', left: '6px', top: '6px' }} />
+        <CirclesSvg
+          style={{
+            position: 'absolute',
+            right: '6px',
+            bottom: '6px',
+            transform: 'rotate(180deg)',
+          }}
+        />
+        <Socials />
+        <HandSvg className={classes.hand} />
         <div className={classes.contentContainer}>
           <img className={classes.image} src={PersonalImage} alt="personal" />
-          <div className={classes.rightContainer}>
+          <div className={classes.innerContainer}>
             <h2 className={classes.heading}>
               {pageText.heading}
               <span className={classes.nickName}>{pageText.nickName}</span>

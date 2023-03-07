@@ -6,12 +6,19 @@ const useStyles = createUseStyles({
     width: '100%',
     color: ThemeColor.textWhite,
     textAlign: 'center',
-    opacity: '0.3',
     fontSize: Typography.fontSizeText_Small,
     marginBottom: '2rem',
+    marginTop: '4rem',
+  },
+  text: {
+    opacity: '0.3',
   },
   year: {
     fontSize: '1rem',
+  },
+  name: {
+    color: ThemeColor.primaryMain,
+    opacity: 1,
   },
 })
 
@@ -22,8 +29,11 @@ const Footer = () => {
   const classes = useStyles()
   return (
     <footer className={classes.container}>
-      CHRISTOPH HAIDER &copy;
-      <span className={classes.year}> {new Date().getFullYear()}</span>
+      <span className={classes.text}>
+        &copy; <span className={classes.year}> {new Date().getFullYear()}</span>{' '}
+        designed & engineered by{' '}
+      </span>
+      <span className={classes.name}>Christoph Haider</span>
     </footer>
   )
 }

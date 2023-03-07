@@ -5,6 +5,7 @@ import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { EmailJSCredentials } from 'utils/credentials'
 import Page from 'containers/pages/Page'
 import emailjs from '@emailjs/browser'
+import Footer from '../Footer'
 
 const MESSAGE_MAX_LENGTH = 300
 
@@ -302,6 +303,7 @@ const ContactPage = () => {
             </div>
           )}
         </div>
+        <Footer />
       </div>
     </Page>
   )
