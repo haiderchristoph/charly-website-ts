@@ -5,7 +5,7 @@ import { SectionId, ThemeColor } from 'utils/constants'
 import { ReactComponent as LogoSvg } from '../../assets/logo.svg'
 
 import NavItem from 'components/displays/NavItem'
-import Socials from 'containers/navigation/Socials'
+import Socials from 'components/displays/Socials'
 
 const borderThickness = '3px'
 
