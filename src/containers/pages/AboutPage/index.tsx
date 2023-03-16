@@ -1,11 +1,9 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
-import SkillBar from 'components/displays/SkillBar'
 import { SectionId, ThemeColor, Typography } from 'utils/constants'
-import { skills } from 'utils/skills'
-import { ReactComponent as QuoteIcon } from './assets/quote-left-svgrepo-com.svg'
+// import { ReactComponent as QuoteIcon } from './assets/quote-left-svgrepo-com.svg'
 import PersonalImage from './assets/christoph-haider.jpg'
+import classNames from 'classnames'
 
 // This is a helper object before intl is in place
 const pageText = {
@@ -14,8 +12,9 @@ const pageText = {
   descriptionHeadline: `I'm a front-end developer for Usersnap in\xa0Linz,\xa0Austria.`,
   descriptionLower: `I'm a design enthusiast with a passion for everything related\xa0to\xa0front-end.`,
   workTogether: `Let's work together!`,
-  quote: `Whoever claims to have mastered these skills 100% may be lying about other things in their life too.`,
-  quoteMe: ` - me, early 2019`,
+  aboutMe: `I enjoy exploring new technologies and JavaScript frameworks by working on side projects, as I find it's a great way to stay up-to-date with the latest trends. When I'm not working on web development projects you usually find me spending some quality time with my lovely family or grinding some Rocket\xa0League\xa0downtime.`,
+  // quote: `Although skill bars are intended to showcase impressive proficiency levels, they usually have the opposite effect when viewed by professionals. However, have a look at my fancy skill bars`,
+  // quoteMe: ` - me, early 2019`,
 }
 
 const useStyles = createUseStyles({
@@ -62,42 +61,45 @@ const useStyles = createUseStyles({
   },
   personalImage: {
     width: '100%',
+    marginBottom: '1rem',
     maxWidth: '12rem',
     height: 'auto',
     borderRadius: '50%',
     boxShadow: `0 0 0 5px ${ThemeColor.backgroundDark}, 0 0 0 10px ${ThemeColor.primaryMain}`,
   },
-  leftQuote: {
-    width: '7rem',
-    opacity: '0.1',
-    position: 'absolute',
-    top: '-2rem',
-    left: '2rem',
-  },
-  blockQuote: {
-    position: 'relative',
-    textAlign: 'center',
-    padding: '1rem',
-  },
-  quoteText: {
-    fontFamily: 'Caveat',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    lineHeight: 1.25,
-  },
-  quoteMe: {
-    marginTop: '1rem',
-    fontWeight: '500',
-    opacity: '0.8',
-  },
-  rightQuote: {
-    width: '7rem',
-    opacity: '0.1',
-    position: 'absolute',
-    bottom: '-0rem',
-    right: '1.75rem',
-    transform: 'rotate(180deg)',
-  },
+  // leftQuote: {
+  //   width: '7rem',
+  //   opacity: '0.1',
+  //   position: 'absolute',
+  //   top: '-2rem',
+  //   left: '2rem',
+  // },
+  // blockQuote: {
+  //   position: 'relative',
+  //   textAlign: 'center',
+  //   padding: '1rem',
+  //   marginLeft: 0,
+  //   marginRight: 0,
+  // },
+  // quoteText: {
+  //   fontFamily: 'Indie Flower',
+  //   fontSize: '1.5rem',
+  //   fontWeight: 600,
+  //   lineHeight: 1.25,
+  // },
+  // quoteMe: {
+  //   marginTop: '1rem',
+  //   fontWeight: '500',
+  //   opacity: '0.8',
+  // },
+  // rightQuote: {
+  //   width: '7rem',
+  //   opacity: '0.1',
+  //   position: 'absolute',
+  //   bottom: '-0rem',
+  //   right: '1.75rem',
+  //   transform: 'rotate(180deg)',
+  // },
   '@media (max-width: 1024px)': {
     contentContainer: {
       flexDirection: 'column',
@@ -111,11 +113,18 @@ const useStyles = createUseStyles({
   },
   link: {
     textDecoration: 'none',
+    cursor: 'pointer',
     color: ThemeColor.primaryLight,
     fontWeight: 600,
     '&:hover': {
       color: ThemeColor.primaryMain,
     },
+  },
+  additionalDescription: {
+    maxWidth: '44rem',
+    margin: '0 auto',
+    marginTop: '2rem',
+    textAalign: 'left',
   },
 })
 
@@ -145,13 +154,30 @@ const WorkAndExperiencePage = () => {
               {pageText.descriptionLower}
             </p>
             <p className={classes.descriptionText}>
-              <a className={classes.link} href={`#${SectionId.CONTACT}`}>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a
+                role="button"
+                className={classes.link}
+                onClick={() =>
+                  document
+                    .querySelector(`#${SectionId.CONTACT}`)
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
+              >
                 {pageText.workTogether}
               </a>
             </p>
+            <p
+              className={classNames(
+                classes.descriptionText,
+                classes.additionalDescription
+              )}
+            >
+              {pageText.aboutMe}
+            </p>
           </div>
-          <div className={classes.skillsContainer}>
-            <blockquote className={classes.blockQuote}>
+          {/* <div className={classes.skillsContainer}> */}
+          {/* <blockquote className={classes.blockQuote}>
               <QuoteIcon className={classes.leftQuote} />
               <div className={classes.quoteText}>{pageText.quote}</div>
               <div className={classes.quoteMe}>{pageText.quoteMe}</div>
@@ -164,8 +190,9 @@ const WorkAndExperiencePage = () => {
                 score={skill.score}
                 color={ThemeColor.primaryMain}
               />
-            ))}
-          </div>
+            ))} */}
+          {/* <p className={classes.descriptionText}>{pageText.aboutMe}</p> */}
+          {/* </div> */}
         </div>
       </div>
     </Page>

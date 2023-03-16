@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
 import { SectionId, ThemeColor, SocialLinks } from 'utils/constants'
 import { ReactComponent as FacebookSvg } from './assets/facebook.svg'
@@ -6,57 +7,49 @@ import { ReactComponent as LinkedinSvg } from './assets/linkedin.svg'
 import { ReactComponent as MailSvg } from './assets/mail.svg'
 
 const useStyles = createUseStyles({
-  socialIcon: {
-    color: ThemeColor.primaryMain,
-    width: '29px',
-    transition: 'ease-in-out 0.1s',
-    '&:hover, &:focus-within': {
-      color: ThemeColor.primaryLight,
-      width: '32px',
-    },
-  },
   socialsContainer: {
-    position: 'absolute',
-    bottom: '1rem',
     display: 'flex',
     justifyContent: 'space-evenly',
     height: '35px',
-  },
-  link: {
-    minWidth: '35px',
-    minHeight: '35px',
-    margin: '0 0.5rem',
+    '& > a': {
+      minWidth: '35px',
+      minHeight: '35px',
+      margin: '0 0.5rem',
+      '& > svg': {
+        color: ThemeColor.primaryMain,
+        width: '29px',
+        transition: 'ease-in-out 0.1s',
+        '&:hover, &:focus-within': {
+          color: ThemeColor.primaryLight,
+          width: '32px',
+        },
+      },
+    },
   },
 })
 
-const Socials = () => {
+const Socials = ({ className }: SocialsProps) => {
   const classes = useStyles()
   return (
-    <div className={classes.socialsContainer}>
-      <a
-        className={classes.link}
-        href={SocialLinks.GITHUB}
-        rel="noreferrer"
-        target="_blank"
-      >
-        <GithubSvg className={classes.socialIcon} />
+    <div className={classNames(classes.socialsContainer, className)}>
+      <a href={SocialLinks.GITHUB} rel="noreferrer" target="_blank">
+        <GithubSvg />
       </a>
-      <a
-        className={classes.link}
-        href={SocialLinks.FACEBOOK}
-        rel="noreferrer"
-        target="_blank"
-      >
-        <FacebookSvg className={classes.socialIcon} />
+      <a href={SocialLinks.FACEBOOK} rel="noreferrer" target="_blank">
+        <FacebookSvg />
       </a>
-      <a className={classes.link} href={SocialLinks.LINKEDIN} rel="noreferrer" target="_blank">
-        <LinkedinSvg className={classes.socialIcon} />
+      <a href={SocialLinks.LINKEDIN} rel="noreferrer" target="_blank">
+        <LinkedinSvg />
       </a>
-      <a className={classes.link} href={`#${SectionId.CONTACT}`}>
-        <MailSvg className={classes.socialIcon} />
+      <a href={`#${SectionId.CONTACT}`}>
+        <MailSvg />
       </a>
     </div>
   )
+}
+
+interface SocialsProps {
+  className?: string
 }
 
 export default Socials

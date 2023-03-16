@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { ReactComponent as BasicsSvg } from './assets/basics.svg'
-import { ReactComponent as VSCodeSvg } from './assets/vscode.svg'
+// import { ReactComponent as VSCodeSvg } from './assets/vscode.svg'
 import { ReactComponent as CodeQualitySvg } from './assets/codequality.svg'
 import { ReactComponent as FigmaSvg } from './assets/figma.svg'
 import { ReactComponent as TypescriptSvg } from './assets/typescript.svg'
@@ -20,10 +20,6 @@ const useStyles = createUseStyles({
     gap: '1rem',
     maxWidth: '80%',
   },
-  svg: {
-    width: '6rem',
-    height: '6rem',
-  },
   subheading: {
     color: ThemeColor.primaryMain,
   },
@@ -34,9 +30,19 @@ const useStyles = createUseStyles({
     outline: 'none',
     cursor: 'pointer',
     position: 'relative',
+    width: '4rem',
+    height: '4rem',
+    '@media (min-width: 769px)': {
+      width: '6rem',
+      height: '6rem',
+    },
     '&:hover, &focus': {
       boxShadow: `0px 0px 10px 2px ${ThemeColor.primaryMain}`,
       borderRadius: '20px',
+    },
+    '& > svg': {
+      width: '100%',
+      height: '100%',
     },
   },
   description: {
@@ -76,7 +82,7 @@ const items = [
   {
     id: TechStackItemId.BASICS,
     title: 'JS, HTML & CSS',
-    description: `The three musketeers: JavaScript, HTML, and CSS are the core technologies used to create and style web pages and web applications. These technologies are essential for creating dynamic, interactive, and visually appealing web interfaces that can provide a seamless user experience.`,
+    description: `The three musketeers: JavaScript, HTML and CSS are the core technologies used to create and style web pages and web applications. These technologies are essential for creating dynamic, interactive and visually appealing web interfaces that can provide a seamless user experience.`,
     Icon: BasicsSvg,
   },
   {
@@ -94,19 +100,19 @@ const items = [
   {
     id: TechStackItemId.DOCKER,
     title: 'Docker',
-    description: `Docker provides a consistent and reproducible environment for building, testing, and deploying my applications. It eliminates the need for manual configuration and reduces the chances of compatibility issues between different environments, hence making it easier to collaborate.`,
+    description: `Docker provides a consistent and reproducible environment for building, testing and deploying my applications. It eliminates the need for manual configuration and reduces the chances of compatibility issues between different environments, hence making it easier to collaborate.`,
     Icon: DockerSvg,
   },
-  {
-    id: TechStackItemId.VSCODE,
-    title: 'VS Code',
-    description: `A powerful, lightweight and customizable code editor that provides a range of extensions to improve productivity and efficiency. With built-in support for popular web technologies and frameworks, VS Code helps me streamline the development process and make it easier to build high-quality web applications.`,
-    Icon: VSCodeSvg,
-  },
+  // {
+  //   id: TechStackItemId.VSCODE,
+  //   title: 'VS Code',
+  //   description: `A powerful, lightweight and customizable code editor that provides a range of extensions to improve productivity and efficiency. With built-in support for popular web technologies and frameworks, VS Code helps me streamline the development process and make it easier to build high-quality web applications.`,
+  //   Icon: VSCodeSvg,
+  // },
   {
     id: TechStackItemId.CODE_QUALITY,
     title: 'Code quality & tools',
-    description: `Good code quality and appearance makes it easier to identify and prevent bugs, add new features, and collaborate with other developers. Proper versioning can help track changes and enables rollback to previous versions. A good set of tools affects maintainability and scalability of the codebase.`,
+    description: `Good code quality and appearance makes it easier to identify and prevent bugs, add new features and collaborate with other developers. Proper versioning can help track changes and enables rollback to previous versions. A good set of tools affects maintainability and scalability of the codebase.`,
     Icon: CodeQualitySvg,
   },
   {
@@ -121,33 +127,32 @@ const items = [
  * TechStackDisplay
  */
 const TechStackDisplay = () => {
-  const classes = useStyles()
   const [itemId, setItemId] = useState(TechStackItemId.BASICS)
   const descriptionRef = useRef<HTMLDivElement>(null)
   const isMobile = useMediaQuery('(max-width: 769px)')
+  const classes = useStyles()
   const currentItem = items.find(({ id }) => id === itemId) || items[0]
 
   return (
     <>
       <div className={classes.container}>
         {items.map(({ id, Icon }) => (
-          <>
-            <button
-              key={`stack-${id}`}
-              className={classNames(classes.button)}
-              onClick={() => {
-                setItemId(id)
-                if (isMobile) {
-                  descriptionRef.current?.scrollIntoView({ behavior: 'smooth' })
-                }
-              }}
-            >
-              <Icon id={id} className={classes.svg} />
-              {itemId === id && (
-                <span className={classes.activeItemIndicator} />
-              )}
-            </button>
-          </>
+          <button
+            key={`stack-${id}`}
+            className={classNames(classes.button)}
+            onClick={() => {
+              setItemId(id)
+              if (isMobile) {
+                descriptionRef.current?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'nearest',
+                })
+              }
+            }}
+          >
+            <Icon />
+            {itemId === id && <span className={classes.activeItemIndicator} />}
+          </button>
         ))}
       </div>
       <div

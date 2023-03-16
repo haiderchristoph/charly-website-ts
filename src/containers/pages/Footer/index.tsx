@@ -1,3 +1,4 @@
+import Socials from 'components/displays/Socials'
 import { createUseStyles } from 'react-jss'
 import { ThemeColor, Typography } from 'utils/constants'
 
@@ -20,6 +21,11 @@ const useStyles = createUseStyles({
     color: ThemeColor.primaryMain,
     opacity: 1,
   },
+  socialsContainer: {
+    maxWidth: '20rem',
+    margin: '0 auto',
+    marginBottom: '1rem',
+  },
 })
 
 /**
@@ -29,9 +35,12 @@ const Footer = () => {
   const classes = useStyles()
   return (
     <footer className={classes.container}>
+      <div className={classes.socialsContainer}>
+        <Socials />
+      </div>
       <span className={classes.text}>
         &copy; <span className={classes.year}> {new Date().getFullYear()}</span>{' '}
-        designed & engineered by{' '}
+        Designed & built by{' '}
       </span>
       <span className={classes.name}>Christoph Haider</span>
     </footer>

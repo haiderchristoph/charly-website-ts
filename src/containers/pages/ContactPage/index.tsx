@@ -5,7 +5,6 @@ import { SectionId, ThemeColor, Typography } from 'utils/constants'
 import { EmailJSCredentials } from 'utils/credentials'
 import Page from 'containers/pages/Page'
 import emailjs from '@emailjs/browser'
-import Footer from '../Footer'
 
 const MESSAGE_MAX_LENGTH = 300
 
@@ -20,7 +19,7 @@ const pageText = {
   submit: 'Submit',
   sending: 'Sending...',
   resultSuccessHeading: 'Thank you for your message!',
-  resultSuccessText: `I'll come back to you as soon as I read your message. I usually
+  resultSuccessText: `I'll come back to you as soon as I read your message. I\xa0usually
   answer within 48 hours.`,
   resultErrorHeading: 'Oh noes!',
   resultErrorText: `Something went wrong while submitting your message. Please reload the page and try it again!`,
@@ -50,6 +49,7 @@ const useStyles = createUseStyles({
     width: '100%',
     maxWidth: '78rem',
     flexDirection: 'column',
+    minHeight: '25rem',
   },
   resultContainer: {
     marginTop: '1rem',
@@ -178,8 +178,7 @@ const ContactPage = () => {
   useEffect(() => {
     if (
       formSendState === FormSendState.SEND_SUCCESS ||
-      formSendState === FormSendState.SEND_ERROR ||
-      formSendState === FormSendState.SENDING
+      formSendState === FormSendState.SEND_ERROR
     ) {
       setTimeout(() => setShowForm(false), 750)
     }
@@ -215,7 +214,7 @@ const ContactPage = () => {
   ) => onSet(event.target.value)
 
   return (
-    <Page id={SectionId.CONTACT} isFullHeight={true} className={classes.page}>
+    <Page id={SectionId.CONTACT} className={classes.page}>
       <div className={classes.container}>
         <h2 className={classes.heading}>{pageText.heading}</h2>
         <div className={classes.contentContainer}>
@@ -303,7 +302,6 @@ const ContactPage = () => {
             </div>
           )}
         </div>
-        <Footer />
       </div>
     </Page>
   )

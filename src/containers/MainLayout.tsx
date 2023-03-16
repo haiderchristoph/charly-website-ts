@@ -4,6 +4,7 @@ import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
 import Navigation from 'containers/navigation/NavigationHandler'
 import TechStackPage from 'containers/pages/TechStackPage'
+import Footer from './pages/Footer'
 
 const useStyles = createUseStyles({
   container: {
@@ -30,6 +31,7 @@ const MainLayout = () => {
       <AboutPage />
       <TechStackPage />
       <ContactPage />
+      <Footer />
     </div>
   )
 }

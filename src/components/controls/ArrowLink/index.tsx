@@ -8,10 +8,6 @@ const pageText = {
   moreInfo: 'more info',
 }
 
-interface StyleProps {
-  isTabletOrBigger: boolean
-}
-
 const useStyles = createUseStyles({
   button: {
     color: ThemeColor.primaryMain,
@@ -30,9 +26,6 @@ const useStyles = createUseStyles({
     marginTop: '3rem',
     background: 'transparent',
     cursor: 'pointer',
-    position: ({ isTabletOrBigger }: StyleProps) =>
-      isTabletOrBigger ? 'absolute' : 'unset',
-    bottom: '8rem',
     '&:hover $icon': {
       animation: '$iconRotateIn 0.5s ease',
       animationFillMode: 'forwards',
@@ -74,12 +67,12 @@ const useStyles = createUseStyles({
 /**
  * A button fashioned link to another section
  */
-const ArrowLink = ({ isTabletOrBigger }: { isTabletOrBigger: boolean }) => {
-  const classes = useStyles({ isTabletOrBigger })
+const ArrowLink = ({ className }: { className: string }) => {
+  const classes = useStyles()
   const [wasHovered, setWasHovered] = useState(false)
   return (
     <button
-      className={classes.button}
+      className={classNames(classes.button, className)}
       onClick={() =>
         document
           .querySelector(`#${SectionId.SKILLS_AND_EXPERIENCE}`)

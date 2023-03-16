@@ -17,7 +17,7 @@ export const ThemeColor = {
 
 export const Typography = {
   fontSizeText_Small: '0.85rem',
-  fontSizeText: '1rem',
+  fontSizeText: '1.125rem',
   fontSizeText_Medium: '1.125rem',
   fontSizeText_Big: '1.25rem',
   fontSizeTitle: '1.5rem',

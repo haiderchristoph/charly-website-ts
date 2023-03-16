@@ -6,7 +6,6 @@ import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
 import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
 import { SectionId, ThemeColor, Typography } from 'utils/constants'
-import useMediaQuery from 'utils/hooks/useMediaQuery'
 import ArrowLink from 'components/controls/ArrowLink'
 import Socials from 'components/displays/Socials'
 
@@ -132,6 +131,16 @@ const useStyles = createUseStyles({
     color: ThemeColor.primaryMain,
     fontWeight: 600,
   },
+  button: {
+    '@media (min-width: 769px)': {
+      position: 'absolute',
+      bottom: '8rem',
+    },
+  },
+  socials: {
+    position: 'absolute',
+    bottom: '1rem',
+  },
 })
 
 /**
@@ -139,7 +148,6 @@ const useStyles = createUseStyles({
  */
 const LandingPage = () => {
   const classes = useStyles()
-  const isTabletOrBigger = useMediaQuery('(min-width: 769px)')
   return (
     <Page
       id={SectionId.LANDING_PAGE}
@@ -169,7 +177,7 @@ const LandingPage = () => {
             transform: 'rotate(180deg)',
           }}
         />
-        <Socials />
+        <Socials className={classes.socials} />
         <HandSvg className={classes.hand} />
         <div className={classes.contentContainer}>
           <img className={classes.image} src={PersonalImage} alt="personal" />
@@ -200,7 +208,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <ArrowLink isTabletOrBigger={isTabletOrBigger} />
+      <ArrowLink className={classes.button} />
     </Page>
   )
 }
