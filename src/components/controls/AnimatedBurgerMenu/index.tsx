@@ -1,17 +1,15 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import { ThemeColor } from 'utils/constants'
 import { ReactComponent as BurgerMenuSvg } from './assets/burger.svg'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette }) => ({
   menuButton_animate__in: {},
   menuButton_animate__out: {},
   menuButton: {
     zIndex: 10000,
-    color: ThemeColor.primaryMain,
+    color: palette.primaryColor.main,
     '&$menuButton_animate__in': {
-      color: ThemeColor.textWhite, // fix for safari
+      color: palette.text, // fix for safari
       '& #center1': {
         transformOrigin: 'center',
         animation: '$animationCenterIn 1s forwards',
@@ -46,22 +44,22 @@ const useStyles = createUseStyles({
   },
   '@keyframes animationCenterIn': {
     '0%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '90%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '100%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
       transform: 'rotate(315deg)',
     },
   },
   '@keyframes animationMenuTopIn': {
     '0%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '10%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '40%': {
       transform: 'translate(0, 8px)',
@@ -76,14 +74,14 @@ const useStyles = createUseStyles({
   },
   '@keyframes animationMenuBottomIn': {
     '0%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '10%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '40%': {
       transform: 'translate(0, -8px)',
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '60%': {
       opacity: 0,
@@ -95,71 +93,71 @@ const useStyles = createUseStyles({
   },
   '@keyframes animationCenter2In': {
     '0%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '90%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '100%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
       transform: 'rotate(225deg)',
     },
   },
   '@keyframes animationCenterOut': {
     '0%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
       transform: 'rotate(315deg)',
     },
     '90%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '100%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
   },
   '@keyframes animationMenuTopOut': {
     '0%': {
       transform: 'translate(0, 8px)',
-      color: ThemeColor.textWhite,
+      color: palette.text,
       opacity: 0,
     },
     '60%': {
       opacity: 0,
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '100%': {
       opacity: 1,
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
   },
   '@keyframes animationMenuBottomOut': {
     '0%': {
       transform: 'translate(0, -8px)',
       opacity: 0,
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '60%': {
       opacity: 0,
-      color: ThemeColor.textWhite,
+      color: palette.text,
     },
     '100%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
       opacity: 1,
     },
   },
   '@keyframes animationCenter2Out': {
     '0%': {
-      color: ThemeColor.textWhite,
+      color: palette.text,
       transform: 'rotate(225deg)',
     },
     '90%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
     '100%': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
   },
-})
+}))
 
 /**
  * AnimatedBurgerMenu

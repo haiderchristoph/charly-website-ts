@@ -1,19 +1,17 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
-import { ThemeColor } from 'utils/constants'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette }) => ({
   link: {
     textDecoration: 'none',
     padding: '0 0.5rem',
-    color: ThemeColor.textWhite,
+    color: palette.text,
     opacity: '0.5',
     '&:hover, &focus': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
       opacity: '1',
     },
   },
-})
+}))
 
 /**
  * SocialItem

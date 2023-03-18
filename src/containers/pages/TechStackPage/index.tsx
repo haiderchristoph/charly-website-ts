@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 import TechStackDisplay from 'components/displays/TechStackDisplay'
 
 // This is a helper object before intl is in place
@@ -9,7 +9,7 @@ const pageText = {
   subHeading: 'Technologies and tools I love to use',
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     display: 'flex',
     alignItems: 'center',
@@ -17,11 +17,11 @@ const useStyles = createUseStyles({
   },
   heading: {
     fontFamily: 'Raleway',
-    fontSize: Typography.fontSizeHeadline,
+    fontSize: typography.fontSize.headline,
   },
   subHeading: {
-    fontSize: Typography.fontSizeText_Medium,
-    color: ThemeColor.primaryMain,
+    fontSize: typography.fontSize.medium,
+    color: palette.primaryColor.main,
     textAlign: 'center',
     marginBottom: '1.5rem',
   },
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     maxWidth: '78rem',
     marginTop: '3rem',
   },
-})
+}))
 
 /**
  * Tech Stack

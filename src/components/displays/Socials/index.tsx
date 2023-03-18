@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
-import { SectionId, ThemeColor, SocialLinks } from 'utils/constants'
+import { SectionId, SocialLinks } from 'utils/constants'
 import { ReactComponent as FacebookSvg } from './assets/facebook.svg'
 import { ReactComponent as GithubSvg } from './assets/github.svg'
 import { ReactComponent as LinkedinSvg } from './assets/linkedin.svg'
 import { ReactComponent as MailSvg } from './assets/mail.svg'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette }) => ({
   socialsContainer: {
     display: 'flex',
     justifyContent: 'space-evenly',
@@ -16,17 +16,17 @@ const useStyles = createUseStyles({
       minHeight: '35px',
       margin: '0 0.5rem',
       '& > svg': {
-        color: ThemeColor.primaryMain,
+        color: palette.primaryColor.main,
         width: '29px',
         transition: 'ease-in-out 0.1s',
         '&:hover, &:focus-within': {
-          color: ThemeColor.primaryLight,
+          color: palette.primaryColor.lighter,
           width: '32px',
         },
       },
     },
   },
-})
+}))
 
 const Socials = ({ className }: SocialsProps) => {
   const classes = useStyles()

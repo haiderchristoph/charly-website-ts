@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 import { EmailJSCredentials } from 'utils/credentials'
 import Page from 'containers/pages/Page'
 import emailjs from '@emailjs/browser'
@@ -25,7 +25,7 @@ const pageText = {
   resultErrorText: `Something went wrong while submitting your message. Please reload the page and try it again!`,
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   page: {
     position: 'relative',
   },
@@ -35,11 +35,11 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
   },
   heading: {
-    fontSize: Typography.fontSizeHeadline,
+    fontSize: typography.fontSize.headline,
   },
   question: {
-    fontSize: Typography.fontSizeText_Medium,
-    color: ThemeColor.primaryMain,
+    fontSize: typography.fontSize.medium,
+    color: palette.primaryColor.main,
     textAlign: 'center',
     marginBottom: '1.5rem',
   },
@@ -71,12 +71,12 @@ const useStyles = createUseStyles({
     },
   },
   resultHeading: {
-    fontSize: Typography.fontSizeTitle,
-    color: ThemeColor.primaryMain,
+    fontSize: typography.fontSize.smallHeadline,
+    color: palette.primaryColor.main,
   },
   resultText: {
     marginTop: '1rem',
-    fontSize: Typography.fontSizeText,
+    fontSize: typography.fontSize.medium,
   },
   formContainer: {
     marginTop: '1rem',
@@ -99,7 +99,7 @@ const useStyles = createUseStyles({
     boxSizing: 'border-box',
     margin: '0.5rem 0',
     border: '2px solid transparent',
-    fontSize: Typography.fontSizeText,
+    fontSize: typography.fontSize.medium,
     padding: '0.5rem',
     outline: 'none',
     backgroundColor: '#332F2E',
@@ -110,39 +110,39 @@ const useStyles = createUseStyles({
       opacity: '0.4',
     },
     '&:focus-within': {
-      border: `2px solid ${ThemeColor.primaryMain}`,
+      border: `2px solid ${palette.primaryColor.main}`,
     },
   },
   submitButton: {
     cursor: 'pointer',
-    fontSize: Typography.fontSizeText_Medium,
+    fontSize: typography.fontSize.medium,
     padding: '0.5rem',
     minWidth: '7rem',
     backgroundColor: 'transparent',
-    border: `1px solid ${ThemeColor.primaryMain}`,
-    color: ThemeColor.primaryMain,
+    border: `1px solid ${palette.primaryColor.main}`,
+    color: palette.primaryColor.main,
     '&$submitButton_wasHovered': {
       animation: '$buttonFillOut 0.5s forwards',
     },
     '&:hover, &:focus': {
-      border: `1px solid ${ThemeColor.primaryMain}`,
+      border: `1px solid ${palette.primaryColor.main}`,
       animation: '$buttonFillIn 0.5s forwards',
     },
   },
   submitButton_wasHovered: {},
   '@keyframes buttonFillIn': {
     to: {
-      backgroundColor: ThemeColor.primaryMain,
-      color: ThemeColor.textWhite,
+      backgroundColor: palette.primaryColor.main,
+      color: palette.text,
     },
   },
   '@keyframes buttonFillOut': {
     from: {
-      backgroundColor: ThemeColor.primaryMain,
-      color: ThemeColor.textWhite,
+      backgroundColor: palette.primaryColor.main,
+      color: palette.text,
     },
     to: {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
       backgroundColor: 'transparent',
     },
   },
@@ -154,7 +154,7 @@ const useStyles = createUseStyles({
   textArea: {
     minHeight: '10em',
   },
-})
+}))
 
 const FormSendState = {
   IDLE: 'FormSendState/idle',

@@ -1,6 +1,5 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
-import { SectionId, ThemeColor } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 
 import NavItem from 'components/displays/NavItem'
 import Socials from 'containers/navigation/Socials'
@@ -8,12 +7,12 @@ import { ReactComponent as LogoSvg } from '../assets/logo.svg'
 
 const borderThickness = '3px'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette }) => ({
   container: {
-    color: ThemeColor.textWhite,
+    color: palette.text,
     width: '7.5rem',
     height: '100vh',
-    borderRight: `${borderThickness} solid ${ThemeColor.primaryMain}`,
+    borderRight: `${borderThickness} solid ${palette.primaryColor.main}`,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -33,7 +32,7 @@ const useStyles = createUseStyles({
     height: '7.5rem',
     marginLeft: `${borderThickness}`,
   },
-})
+}))
 
 /**
  * VerticalNavigation

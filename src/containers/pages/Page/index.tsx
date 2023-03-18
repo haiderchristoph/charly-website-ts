@@ -1,13 +1,11 @@
-import React from 'react'
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
-import { ThemeColor } from 'utils/constants'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette }) => ({
   container: {
     padding: '1rem',
-    backgroundColor: ThemeColor.backgroundDark,
-    color: ThemeColor.textWhite,
+    backgroundColor: palette.background,
+    color: palette.text,
     overflow: 'hidden',
   },
   horizontalCenteredContainer: {
@@ -21,7 +19,7 @@ const useStyles = createUseStyles({
   fullHeightContainer: {
     minHeight: '100vh',
   },
-})
+}))
 
 /**
  * Base container for pages

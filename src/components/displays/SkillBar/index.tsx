@@ -1,12 +1,11 @@
 import 'intersection-observer'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
 import { useIsVisible } from 'react-is-visible'
-import { ThemeColor, Typography } from 'utils/constants'
 
 const useStyles = (props: any) =>
-  createUseStyles({
+  createUseStyles(({ palette, typography }) => ({
     container: {
       width: '100%',
       margin: '1rem 0',
@@ -22,7 +21,7 @@ const useStyles = (props: any) =>
       position: 'absolute',
       right: '0.25rem',
       bottom: '0.25rem',
-      fontSize: Typography.fontSizeText_Small,
+      fontSize: typography.fontSize.small,
       animation: '$scoreOpacity 4s forwards',
     },
     skillFill: {
@@ -35,7 +34,7 @@ const useStyles = (props: any) =>
     label: {
       fontSize: '1rem',
       fontWeight: 600,
-      backgroundColor: ThemeColor.primaryDark,
+      backgroundColor: palette.primaryColor.darker,
       minWidth: '6rem',
       display: 'flex',
       alignItems: 'center',
@@ -60,7 +59,7 @@ const useStyles = (props: any) =>
         opacity: 1,
       },
     },
-  })
+  }))
 
 /**
  * Visualizes a given score in a animated progress bar

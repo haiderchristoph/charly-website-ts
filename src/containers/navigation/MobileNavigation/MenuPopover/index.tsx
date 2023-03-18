@@ -1,7 +1,6 @@
-import React from 'react'
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
-import { SectionId, ThemeColor } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 import { ReactComponent as LogoSvg } from '../../assets/logo.svg'
 
 import NavItem from 'components/displays/NavItem'
@@ -9,14 +8,14 @@ import Socials from 'components/displays/Socials'
 
 const borderThickness = '3px'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   menuOverlay: {
     position: 'fixed',
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: ThemeColor.backgroundDark,
+    backgroundColor: palette.background,
     zIndex: '11',
     opacity: 0,
     '&$menuOverlay_animate_in': {
@@ -69,11 +68,11 @@ const useStyles = createUseStyles({
       padding: '1.75rem 0.25rem',
     },
     '& > li:not(:last-child)': {
-      borderBottom: `1px solid ${ThemeColor.textWhite}`,
+      borderBottom: `1px solid ${palette.text}`,
     },
   },
   logoContainer: {
-    backgroundColor: ThemeColor.primaryMain,
+    backgroundColor: palette.primaryColor.main,
     height: '3rem',
     width: '100%',
   },
@@ -83,7 +82,7 @@ const useStyles = createUseStyles({
     height: '3rem',
     marginLeft: `${borderThickness}`,
   },
-})
+}))
 
 /**
  * MenuPopover

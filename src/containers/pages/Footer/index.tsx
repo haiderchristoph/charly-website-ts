@@ -1,13 +1,12 @@
 import Socials from 'components/displays/Socials'
 import { createUseStyles } from 'react-jss'
-import { ThemeColor, Typography } from 'utils/constants'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     width: '100%',
-    color: ThemeColor.textWhite,
+    color: palette.text,
     textAlign: 'center',
-    fontSize: Typography.fontSizeText_Small,
+    fontSize: typography.fontSize.small,
     marginBottom: '2rem',
     marginTop: '4rem',
   },
@@ -18,7 +17,7 @@ const useStyles = createUseStyles({
     fontSize: '1rem',
   },
   name: {
-    color: ThemeColor.primaryMain,
+    color: palette.primaryColor.main,
     opacity: 1,
   },
   socialsContainer: {
@@ -26,7 +25,7 @@ const useStyles = createUseStyles({
     margin: '0 auto',
     marginBottom: '1rem',
   },
-})
+}))
 
 /**
  * Footer

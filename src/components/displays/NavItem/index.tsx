@@ -1,9 +1,7 @@
-import React from 'react'
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import { ThemeColor, Typography } from 'utils/constants'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     textDecoration: 'none',
     display: 'flex',
@@ -12,20 +10,20 @@ const useStyles = createUseStyles({
   },
   button: {
     textDecoration: 'none',
-    color: ThemeColor.textWhite,
+    color: palette.text,
     fontWeight: 500,
     background: 'transparent',
     border: 'none',
     cursor: 'pointer',
-    fontSize: Typography.fontSizeText_Big,
+    fontSize: typography.fontSize.large,
     '&:hover, &:focus, &$link_isActive': {
       textDecoration: 'underline',
-      textDecorationColor: ThemeColor.primaryMain,
+      textDecorationColor: palette.primaryColor.main,
       textDecorationThickness: '4px',
     },
   },
   link_isActive: {},
-})
+}))
 
 /**
  * NavItem

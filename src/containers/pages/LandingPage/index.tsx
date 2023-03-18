@@ -5,7 +5,7 @@ import PersonalImage from './assets/personal-light.png'
 import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
 import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 import ArrowLink from 'components/controls/ArrowLink'
 import Socials from 'components/displays/Socials'
 
@@ -18,7 +18,7 @@ const pageText = {
   job: 'Web Developer',
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     boxSizing: 'border-box',
     display: 'flex',
@@ -30,8 +30,8 @@ const useStyles = createUseStyles({
     transform: 'rotate(-5deg)',
     position: 'relative',
     borderRadius: '2px',
-    border: `3px solid ${ThemeColor.primaryMain}`,
-    boxShadow: `1px 1px 8px 2px ${ThemeColor.primaryMain}`,
+    border: `3px solid ${palette.primaryColor.main}`,
+    boxShadow: `1px 1px 8px 2px ${palette.primaryColor.main}`,
     // keep aspect ratio of card
     width: '85%',
     height: '54vw',
@@ -62,7 +62,7 @@ const useStyles = createUseStyles({
   nickName: {
     margin: 0,
     color: '#27B8B3',
-    background: `linear-gradient(to right, ${ThemeColor.primaryLight}, white 50%, ${ThemeColor.primaryMain} 50%)`,
+    background: `linear-gradient(to right, ${palette.primaryColor.lighter}, white 50%, ${palette.primaryColor.main} 50%)`,
     backgroundClip: 'text',
     boxSizing: 'border-box',
     backgroundSize: '200% 100%',
@@ -82,7 +82,7 @@ const useStyles = createUseStyles({
     '100%': { backgroundPosition: '0 100%' },
   },
   descriptionText: {
-    fontSize: Typography.fontSizeText_Big,
+    fontSize: typography.fontSize.large,
     textAlign: 'center',
     margin: '0.25rem',
   },
@@ -92,7 +92,7 @@ const useStyles = createUseStyles({
   image: {
     width: '10.5rem',
     borderRadius: '50%',
-    border: `4px solid ${ThemeColor.primaryMain}`,
+    border: `4px solid ${palette.primaryColor.main}`,
     flexShrink: 0,
     '@media (min-width: 769px)': {
       marginRight: '1.5rem',
@@ -128,7 +128,7 @@ const useStyles = createUseStyles({
     },
   },
   descriptionTextJob: {
-    color: ThemeColor.primaryMain,
+    color: palette.primaryColor.main,
     fontWeight: 600,
   },
   button: {
@@ -141,7 +141,7 @@ const useStyles = createUseStyles({
     position: 'absolute',
     bottom: '1rem',
   },
-})
+}))
 
 /**
  * Very first page of the website.

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 // import { ReactComponent as QuoteIcon } from './assets/quote-left-svgrepo-com.svg'
 import PersonalImage from './assets/christoph-haider.jpg'
 import classNames from 'classnames'
@@ -17,7 +17,7 @@ const pageText = {
   // quoteMe: ` - me, early 2019`,
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     display: 'flex',
     alignItems: 'center',
@@ -25,7 +25,7 @@ const useStyles = createUseStyles({
   },
   heading: {
     fontFamily: 'Raleway',
-    fontSize: Typography.fontSizeHeadline,
+    fontSize: typography.fontSize.headline,
   },
   contentContainer: {
     display: 'flex',
@@ -34,13 +34,13 @@ const useStyles = createUseStyles({
     maxWidth: '78rem',
   },
   descriptionHeadline: {
-    fontSize: Typography.fontSizeText_Big,
+    fontSize: typography.fontSize.large,
     lineHeight: 1.25,
     margin: 0,
     fontWeight: 600,
   },
   descriptionText: {
-    fontSize: Typography.fontSizeText,
+    fontSize: typography.fontSize.regular,
     width: '100%',
     lineHeight: 1.5,
     margin: 0,
@@ -55,7 +55,7 @@ const useStyles = createUseStyles({
     textAlign: 'center',
   },
   descriptionTitle: {
-    fontSize: Typography.fontSizeTitle,
+    fontSize: typography.fontSize.smallHeadline,
     fontWeight: '600',
     margin: '1rem 0',
   },
@@ -65,7 +65,7 @@ const useStyles = createUseStyles({
     maxWidth: '12rem',
     height: 'auto',
     borderRadius: '50%',
-    boxShadow: `0 0 0 5px ${ThemeColor.backgroundDark}, 0 0 0 10px ${ThemeColor.primaryMain}`,
+    boxShadow: `0 0 0 5px ${palette.background}, 0 0 0 10px ${palette.primaryColor.main}`,
   },
   // leftQuote: {
   //   width: '7rem',
@@ -114,19 +114,18 @@ const useStyles = createUseStyles({
   link: {
     textDecoration: 'none',
     cursor: 'pointer',
-    color: ThemeColor.primaryLight,
+    color: palette.primaryColor.lighter,
     fontWeight: 600,
     '&:hover': {
-      color: ThemeColor.primaryMain,
+      color: palette.primaryColor.main,
     },
   },
   additionalDescription: {
     maxWidth: '44rem',
     margin: '0 auto',
     marginTop: '2rem',
-    textAalign: 'left',
   },
-})
+}))
 
 /**
  * Work and Experience

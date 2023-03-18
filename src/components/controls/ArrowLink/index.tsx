@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import { createUseStyles } from 'react-jss'
+import { useState } from 'react'
 import classNames from 'classnames'
+import { createUseStyles } from 'react-jss'
 import { ReactComponent as DownArrowIcon } from './assets/down-arrow.svg'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 
 const pageText = {
   moreInfo: 'more info',
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   button: {
-    color: ThemeColor.primaryMain,
+    color: palette.primaryColor.main,
     borderRadius: '2px',
-    border: `2px solid ${ThemeColor.primaryMain}`,
-    boxShadow: `0px 0px 2px 1px ${ThemeColor.primaryMain}`,
+    border: `2px solid ${palette.primaryColor.main}`,
+    boxShadow: `0px 0px 2px 1px ${palette.primaryColor.main}`,
     padding: '0.5rem',
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
-    fontSize: Typography.fontSizeText_Big,
+    fontSize: typography.fontSize.large,
     fontWeight: 500,
     justifyContent: 'space-between',
     paddingRight: '0.75rem',
@@ -40,8 +40,8 @@ const useStyles = createUseStyles({
   },
   '@keyframes buttonFillIn': {
     to: {
-      backgroundColor: ThemeColor.primaryMain,
-      color: ThemeColor.textWhite,
+      backgroundColor: palette.primaryColor.main,
+      color: palette.text,
     },
   },
   '@keyframes iconRotateIn': {
@@ -62,7 +62,7 @@ const useStyles = createUseStyles({
     },
   },
   icon_wasHovered: {},
-})
+}))
 
 /**
  * A button fashioned link to another section

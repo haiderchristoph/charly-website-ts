@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
-import { SectionId, ThemeColor, Typography } from 'utils/constants'
+import { SectionId } from 'utils/constants'
 import { ReactComponent as BasicsSvg } from './assets/basics.svg'
 // import { ReactComponent as VSCodeSvg } from './assets/vscode.svg'
 import { ReactComponent as CodeQualitySvg } from './assets/codequality.svg'
@@ -11,7 +11,7 @@ import { ReactComponent as DockerSvg } from './assets/docker.svg'
 import { ReactComponent as ReactSvg } from './assets/react.svg'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
     margin: '0 auto',
     display: 'flex',
@@ -21,7 +21,7 @@ const useStyles = createUseStyles({
     maxWidth: '80%',
   },
   subheading: {
-    color: ThemeColor.primaryMain,
+    color: palette.primaryColor.main,
   },
   button: {
     background: 'transparent',
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
       height: '6rem',
     },
     '&:hover, &focus': {
-      boxShadow: `0px 0px 10px 2px ${ThemeColor.primaryMain}`,
+      boxShadow: `0px 0px 10px 2px ${palette.primaryColor.main}`,
       borderRadius: '20px',
     },
     '& > svg': {
@@ -47,7 +47,7 @@ const useStyles = createUseStyles({
   },
   description: {
     lineHeight: 1.5,
-    fontSize: Typography.fontSizeText,
+    fontSize: typography.fontSize.regular,
     minHeight: '7rem', // prevent content jumping
   },
   descriptionContainer: {
@@ -57,7 +57,7 @@ const useStyles = createUseStyles({
     maxWidth: '46rem',
   },
   activeItemIndicator: {
-    backgroundColor: ThemeColor.primaryMain,
+    backgroundColor: palette.primaryColor.main,
     position: 'absolute',
     width: '3rem',
     height: '2px',
@@ -66,7 +66,7 @@ const useStyles = createUseStyles({
     right: 0,
     margin: 'auto',
   },
-})
+}))
 
 enum TechStackItemId {
   BASICS = 'basics',
