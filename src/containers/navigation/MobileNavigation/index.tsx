@@ -15,9 +15,10 @@ const useStyles = createUseStyles({
     top: '1rem',
     cursor: 'pointer',
     '&$burgerMenuButton_open': {
-      background: 'rgba(29, 29, 29, 0.7)',
-      borderRadius: '4px',
-      transition: 'all 0.5s',
+      // deactivate the background is looks weird, at least temporarily
+      // background: 'rgba(29, 29, 29, 0.7)',
+      // borderRadius: '4px',
+      // transition: 'all 0.5s',
     },
     '&$burgerMenuButton_close': {},
   },

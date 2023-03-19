@@ -9,8 +9,8 @@ import useMediaQuery from 'utils/hooks/useMediaQuery'
  * Vertical Desktop Navigation version
  */
 const NavigationHandler = () => {
-  const isDesktop = useMediaQuery('(min-width: 1024px)')
-  return isDesktop ? null : <MobileNavigation />
+  const isMobile = useMediaQuery('(max-width: 1024px)')
+  return isMobile ? <MobileNavigation /> : null
   // return isDesktop ? <VerticalNavigation /> : <MobileNavigation />
 }
 

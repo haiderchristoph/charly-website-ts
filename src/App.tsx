@@ -5,12 +5,25 @@ import { ThemeProvider } from 'react-jss'
 import { lightTheme, darkTheme } from 'utils/theming/theme'
 import { ThemeMode } from 'utils/theming/constants'
 import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import useLocalStorage from 'utils/hooks/useLocalStorage'
 
 function App() {
-  const [themeMode, setThemeMode] = useState(ThemeMode.DARK)
+  const [initialThemeMode, setStorageThemeMode] = useLocalStorage<string>(
+    'themeMode',
+    ThemeMode.DARK
+  )
+  const [themeMode, setThemeMode] = useState(initialThemeMode)
+
+  const handleSetThemeMode = (newValue: string) => {
+    setThemeMode(newValue)
+    setStorageThemeMode(newValue)
+  }
+
   polyfill()
   return (
-    <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
+    <ThemeModeContext.Provider
+      value={{ themeMode, setThemeMode: handleSetThemeMode }}
+    >
       <ThemeProvider
         theme={themeMode === ThemeMode.LIGHT ? lightTheme : darkTheme}
       >
