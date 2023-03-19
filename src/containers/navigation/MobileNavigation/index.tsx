@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
 
@@ -9,16 +9,23 @@ const useStyles = createUseStyles({
   burgerMenuButton: {
     padding: '0.25rem',
     paddingBottom: '0.125rem',
-    zIndex: '12',
+    zIndex: 12,
     position: 'fixed',
     right: '1rem',
-    top: '0.75rem',
+    top: '1rem',
     cursor: 'pointer',
     '&$burgerMenuButton_open': {
       background: 'rgba(29, 29, 29, 0.7)',
       borderRadius: '4px',
+      transition: 'all 0.5s',
     },
     '&$burgerMenuButton_close': {},
+  },
+  themeButton: {
+    position: 'fixed',
+    top: '1rem',
+    right: '4rem',
+    zIndex: 12,
   },
   burgerMenuButton_close: {},
   burgerMenuButton_open: {},

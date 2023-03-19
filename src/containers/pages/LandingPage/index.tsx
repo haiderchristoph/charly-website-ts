@@ -1,13 +1,17 @@
 import classNames from 'classnames'
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
-import PersonalImage from './assets/personal-light.png'
+import PersonalImageLight from './assets/personal-light.png'
+import PersonalImageDark from './assets/personal-dark.png'
 import { ReactComponent as TriangleSvg } from './assets/triangle.svg'
 import { ReactComponent as CirclesSvg } from './assets/circles.svg'
 import { ReactComponent as HandSvg } from './assets/hand-blue.svg'
 import { SectionId } from 'utils/constants'
 import ArrowLink from 'components/controls/ArrowLink'
 import Socials from 'components/displays/Socials'
+import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import { useContext } from 'react'
+import { ThemeMode } from 'utils/theming/constants'
 
 // This is a helper object before intl is in place
 const pageText = {
@@ -148,6 +152,7 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
  */
 const LandingPage = () => {
   const classes = useStyles()
+  const { themeMode } = useContext(ThemeModeContext)
   return (
     <Page
       id={SectionId.LANDING_PAGE}
@@ -180,7 +185,15 @@ const LandingPage = () => {
         <Socials className={classes.socials} />
         <HandSvg className={classes.hand} />
         <div className={classes.contentContainer}>
-          <img className={classes.image} src={PersonalImage} alt="personal" />
+          <img
+            className={classes.image}
+            src={
+              themeMode === ThemeMode.DARK
+                ? PersonalImageDark
+                : PersonalImageLight
+            }
+            alt="personal"
+          />
           <div className={classes.innerContainer}>
             <h2 className={classes.heading}>
               {pageText.heading}

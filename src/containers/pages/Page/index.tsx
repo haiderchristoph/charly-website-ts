@@ -7,6 +7,7 @@ const useStyles = createUseStyles(({ palette }) => ({
     backgroundColor: palette.background,
     color: palette.text,
     overflow: 'hidden',
+    transition: 'all .5s',
   },
   horizontalCenteredContainer: {
     display: 'flex',

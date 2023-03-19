@@ -9,6 +9,7 @@ declare global {
         }
         text: string
         background: string
+        inputBackground: string
       }
       typography: {
         fontSize: {

@@ -7,11 +7,6 @@ export const SectionId = {
   CONTACT: 'section-contact',
 }
 
-export const ThemeMode = {
-  LIGHT: 'light',
-  DARK: 'dark',
-}
-
 export const SocialLinks = {
   GITHUB: 'https://github.com/haidercharly',
   FACEBOOK: 'https://www.facebook.com/christoph.haider2',

@@ -102,11 +102,11 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
     fontSize: typography.fontSize.medium,
     padding: '0.5rem',
     outline: 'none',
-    backgroundColor: '#332F2E',
-    color: 'white',
+    backgroundColor: palette.inputBackground,
+    color: palette.text,
     resize: 'vertical',
     '&::placeholder': {
-      color: 'white',
+      color: palette.text,
       opacity: '0.4',
     },
     '&:focus-within': {
