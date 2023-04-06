@@ -9,7 +9,7 @@ const useStyles = createUseStyles(({ palette }) => ({
     zIndex: 10000,
     color: palette.primaryColor.main,
     '&$menuButton_animate__in': {
-      color: palette.text, // fix for safari
+      color: palette.white, // fix for safari
       '& #center1': {
         transformOrigin: 'center',
         animation: '$animationCenterIn 1s forwards',
@@ -47,10 +47,10 @@ const useStyles = createUseStyles(({ palette }) => ({
       color: palette.primaryColor.main,
     },
     '90%': {
-      color: palette.text,
+      color: palette.white,
     },
     '100%': {
-      color: palette.text,
+      color: palette.white,
       transform: 'rotate(315deg)',
     },
   },
@@ -59,7 +59,7 @@ const useStyles = createUseStyles(({ palette }) => ({
       color: palette.primaryColor.main,
     },
     '10%': {
-      color: palette.text,
+      color: palette.white,
     },
     '40%': {
       transform: 'translate(0, 8px)',
@@ -77,11 +77,11 @@ const useStyles = createUseStyles(({ palette }) => ({
       color: palette.primaryColor.main,
     },
     '10%': {
-      color: palette.text,
+      color: palette.white,
     },
     '40%': {
       transform: 'translate(0, -8px)',
-      color: palette.text,
+      color: palette.white,
     },
     '60%': {
       opacity: 0,
@@ -96,16 +96,16 @@ const useStyles = createUseStyles(({ palette }) => ({
       color: palette.primaryColor.main,
     },
     '90%': {
-      color: palette.text,
+      color: palette.white,
     },
     '100%': {
-      color: palette.text,
+      color: palette.white,
       transform: 'rotate(225deg)',
     },
   },
   '@keyframes animationCenterOut': {
     '0%': {
-      color: palette.text,
+      color: palette.white,
       transform: 'rotate(315deg)',
     },
     '90%': {
@@ -118,12 +118,12 @@ const useStyles = createUseStyles(({ palette }) => ({
   '@keyframes animationMenuTopOut': {
     '0%': {
       transform: 'translate(0, 8px)',
-      color: palette.text,
+      color: palette.white,
       opacity: 0,
     },
     '60%': {
       opacity: 0,
-      color: palette.text,
+      color: palette.white,
     },
     '100%': {
       opacity: 1,
@@ -134,11 +134,11 @@ const useStyles = createUseStyles(({ palette }) => ({
     '0%': {
       transform: 'translate(0, -8px)',
       opacity: 0,
-      color: palette.text,
+      color: palette.white,
     },
     '60%': {
       opacity: 0,
-      color: palette.text,
+      color: palette.white,
     },
     '100%': {
       color: palette.primaryColor.main,
@@ -147,7 +147,7 @@ const useStyles = createUseStyles(({ palette }) => ({
   },
   '@keyframes animationCenter2Out': {
     '0%': {
-      color: palette.text,
+      color: palette.white,
       transform: 'rotate(225deg)',
     },
     '90%': {

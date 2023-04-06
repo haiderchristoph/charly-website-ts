@@ -133,13 +133,13 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
   '@keyframes buttonFillIn': {
     to: {
       backgroundColor: palette.primaryColor.main,
-      color: palette.text,
+      color: palette.white,
     },
   },
   '@keyframes buttonFillOut': {
     from: {
       backgroundColor: palette.primaryColor.main,
-      color: palette.text,
+      color: palette.white,
     },
     to: {
       color: palette.primaryColor.main,

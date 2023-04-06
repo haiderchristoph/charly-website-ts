@@ -82,7 +82,7 @@ const items = [
   {
     id: TechStackItemId.BASICS,
     title: 'JS, HTML & CSS',
-    description: `The three musketeers: JavaScript, HTML and CSS are the core technologies used to create and style web pages and web applications. These technologies are essential for creating dynamic, interactive and visually appealing web interfaces that can provide a seamless user experience.`,
+    description: `The three musketeers: JavaScript, HTML and CSS are the core technologies I use to create and style web pages and web applications. These technologies are essential for creating dynamic, interactive and visually appealing web interfaces that can provide a seamless user experience.`,
     Icon: BasicsSvg,
   },
   {
@@ -94,7 +94,7 @@ const items = [
   {
     id: TechStackItemId.TYPESCRIPT,
     title: 'Typescript',
-    description: `Typescript provides type checking in JavaScript code, which can help catch errors and bugs earlier in the development process, leading to more robust and reliable code. It helps me to maintain a more efficient development workflow and to create high-quality frontend applications.`,
+    description: `Typescript provides type checking in JavaScript code, which helps me catching errors and bugs earlier in the development process, leading to more robust and reliable code. It helps me to maintain a more efficient development workflow and to create high-quality frontend applications.`,
     Icon: TypescriptSvg,
   },
   {
@@ -103,6 +103,7 @@ const items = [
     description: `Docker provides a consistent and reproducible environment for building, testing and deploying my applications. It eliminates the need for manual configuration and reduces the chances of compatibility issues between different environments, hence making it easier to collaborate.`,
     Icon: DockerSvg,
   },
+  // not used at the moment
   // {
   //   id: TechStackItemId.VSCODE,
   //   title: 'VS Code',
@@ -112,13 +113,13 @@ const items = [
   {
     id: TechStackItemId.CODE_QUALITY,
     title: 'Code quality & tools',
-    description: `Good code quality and appearance makes it easier to identify and prevent bugs, add new features and collaborate with other developers. Proper versioning can help track changes and enables rollback to previous versions. A good set of tools affects maintainability and scalability of the codebase.`,
+    description: `Good code quality and appearance makes it easier to identify and prevent bugs, add new features and collaborate with other developers. Versioning code is a must. In my opinion, a good set of tools affects maintainability and scalability of the codebase significantly.`,
     Icon: CodeQualitySvg,
   },
   {
     id: TechStackItemId.FIGMA,
     title: 'Figma',
-    description: `Figma is a feature rich design tool that allows me to design web applications and logos. It encourages to collaborate on designs and makes it easy to share components and assets with others. Figma's comprehensive and interactive design systems allows me to easily translate my designs into code.`,
+    description: `Figma is a feature rich design tool that allows me to design web applications and logos. It makes it easy to share components and assets with others. Figma's comprehensive and interactive design systems allows me to easily translate my designs into code.`,
     Icon: FigmaSvg,
   },
 ]

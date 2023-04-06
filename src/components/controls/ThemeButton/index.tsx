@@ -20,7 +20,6 @@ const useStyles = createUseStyles(({ palette }) => ({
     width: '32px',
     height: '32px',
     borderRadius: '50%',
-    overflow: 'hidden',
     backgroundColor: palette.primaryColor.main,
     transition: 'all 1s',
     '&$animate_moonOut': {
@@ -35,21 +34,19 @@ const useStyles = createUseStyles(({ palette }) => ({
   '@keyframes animateMoonOut': {
     '0%': {
       transform: 'rotate(0)',
+      overflow: 'hidden',
     },
     '100%': {
-      transform: 'rotate(360deg)',
-      width: '18px',
-      height: '18px',
+      transform: 'scale(0.5625) rotate(360deg)',
+      overflow: 'hidden',
     },
   },
   '@keyframes animateMoonIn': {
     '0%': {
-      width: '18px',
-      height: '18px',
+      transform: 'scale(0.57)',
     },
     '100%': {
-      width: '32px',
-      height: '32px',
+      transform: 'scale(1)',
     },
   },
   eclipseOverlay: {
@@ -87,6 +84,9 @@ const useStyles = createUseStyles(({ palette }) => ({
       transform: 'translate(25%, -25%)',
       backgroundColor: palette.background,
     },
+    '50%': {
+      backgroundColor: 'transparent',
+    },
     '100%': {
       transform: 'translate(100%, -100%)',
       backgroundColor: 'transparent',
@@ -109,26 +109,20 @@ const useStyles = createUseStyles(({ palette }) => ({
   '@keyframes animateBeamsIn': {
     '0%': {
       opacity: 1,
-      width: '36px',
-      height: '36px',
+      transform: 'scale(1.33)',
     },
     '100%': {
-      width: '36px',
-      height: '36px',
+      transform: 'scale(1.33)',
       opacity: 0,
     },
   },
   '@keyframes animateBeamsOut': {
     '0%': {
-      transform: 'rotate(0)',
-      width: '24px',
-      height: '24px',
+      transform: 'scale(1) rotate(0)',
       opacity: 0,
     },
     '100%': {
-      transform: 'rotate(180deg)',
-      width: '36px',
-      height: '36px',
+      transform: 'scale(1.33) rotate(180deg)',
       opacity: 1,
     },
   },
@@ -143,7 +137,6 @@ const ThemeButton = ({ className }: ThemeButtonProps) => {
   const shouldAnimateIn = themeMode === ThemeMode.DARK
   const shouldAnimateOut = themeMode === ThemeMode.LIGHT
   const handleClick = () => {
-    // toogle the theme mode
     setThemeMode(
       themeMode === ThemeMode.DARK ? ThemeMode.LIGHT : ThemeMode.DARK
     )

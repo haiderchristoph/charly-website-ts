@@ -41,7 +41,7 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
   '@keyframes buttonFillIn': {
     to: {
       backgroundColor: palette.primaryColor.main,
-      color: palette.text,
+      color: palette.white,
     },
   },
   '@keyframes iconRotateIn': {

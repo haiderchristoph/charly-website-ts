@@ -7,6 +7,8 @@ declare global {
           darker: string
           lighter: string
         }
+        white: string
+        black: string
         text: string
         background: string
         inputBackground: string

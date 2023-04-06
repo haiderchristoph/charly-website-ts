@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import Page from 'containers/pages/Page'
 import { SectionId } from 'utils/constants'
-// import { ReactComponent as QuoteIcon } from './assets/quote-left-svgrepo-com.svg'
 import PersonalImage from './assets/christoph-haider.jpg'
 import classNames from 'classnames'
 
@@ -12,9 +11,7 @@ const pageText = {
   descriptionHeadline: `I'm a front-end developer for Usersnap in\xa0Linz,\xa0Austria.`,
   descriptionLower: `I'm a design enthusiast with a passion for everything related\xa0to\xa0front-end.`,
   workTogether: `Let's work together!`,
-  aboutMe: `I enjoy exploring new technologies and JavaScript frameworks by working on side projects, as I find it's a great way to stay up-to-date with the latest trends. When I'm not working on web development projects you usually find me spending some quality time with my lovely family or grinding some Rocket\xa0League\xa0downtime.`,
-  // quote: `Although skill bars are intended to showcase impressive proficiency levels, they usually have the opposite effect when viewed by professionals. However, have a look at my fancy skill bars`,
-  // quoteMe: ` - me, early 2019`,
+  aboutMe: `I enjoy exploring new technologies and JavaScript frameworks by working on side projects, as I find it's a great way to stay up-to-date with the latest trends. When I'm not working on web development projects you usually find me spending some quality time with my lovely family or grinding some Rocket\xa0League\xa0in\xa0my\xa0downtime.`,
 }
 
 const useStyles = createUseStyles(({ palette, typography }) => ({
@@ -67,39 +64,6 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
     borderRadius: '50%',
     boxShadow: `0 0 0 5px ${palette.background}, 0 0 0 10px ${palette.primaryColor.main}`,
   },
-  // leftQuote: {
-  //   width: '7rem',
-  //   opacity: '0.1',
-  //   position: 'absolute',
-  //   top: '-2rem',
-  //   left: '2rem',
-  // },
-  // blockQuote: {
-  //   position: 'relative',
-  //   textAlign: 'center',
-  //   padding: '1rem',
-  //   marginLeft: 0,
-  //   marginRight: 0,
-  // },
-  // quoteText: {
-  //   fontFamily: 'Indie Flower',
-  //   fontSize: '1.5rem',
-  //   fontWeight: 600,
-  //   lineHeight: 1.25,
-  // },
-  // quoteMe: {
-  //   marginTop: '1rem',
-  //   fontWeight: '500',
-  //   opacity: '0.8',
-  // },
-  // rightQuote: {
-  //   width: '7rem',
-  //   opacity: '0.1',
-  //   position: 'absolute',
-  //   bottom: '-0rem',
-  //   right: '1.75rem',
-  //   transform: 'rotate(180deg)',
-  // },
   '@media (max-width: 1024px)': {
     contentContainer: {
       flexDirection: 'column',

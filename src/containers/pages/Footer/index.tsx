@@ -10,9 +10,6 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
     marginBottom: '2rem',
     marginTop: '4rem',
   },
-  text: {
-    opacity: '0.3',
-  },
   year: {
     fontSize: '1rem',
   },
@@ -37,7 +34,7 @@ const Footer = () => {
       <div className={classes.socialsContainer}>
         <Socials />
       </div>
-      <span className={classes.text}>
+      <span>
         &copy; <span className={classes.year}> {new Date().getFullYear()}</span>{' '}
         Designed & built by{' '}
       </span>
