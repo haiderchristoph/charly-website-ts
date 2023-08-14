@@ -1,7 +1,7 @@
-import { createUseStyles } from 'react-jss'
-import Page from 'containers/pages/Page'
-import { SectionId } from 'utils/constants'
 import TechStackDisplay from 'components/displays/TechStackDisplay'
+import Page from 'containers/pages/Page'
+import { createUseStyles } from 'react-jss'
+import { SectionId } from 'utils/constants'
 
 // This is a helper object before intl is in place
 const pageText = {

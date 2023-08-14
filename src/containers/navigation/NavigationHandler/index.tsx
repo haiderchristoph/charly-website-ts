@@ -1,7 +1,6 @@
-import React from 'react'
 // import VerticalNavigation from '../VerticalNavigation'
-import MobileNavigation from '../MobileNavigation'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
+import MobileNavigation from '../MobileNavigation'
 
 /**
  * Navigation

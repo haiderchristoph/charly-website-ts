@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { createUseStyles } from 'react-jss'
+import emailjs from '@emailjs/browser'
 import classNames from 'classnames'
+import Page from 'containers/pages/Page'
+import React, { useEffect, useState } from 'react'
+import { createUseStyles } from 'react-jss'
 import { SectionId } from 'utils/constants'
 import { EmailJSCredentials } from 'utils/credentials'
-import Page from 'containers/pages/Page'
-import emailjs from '@emailjs/browser'
 
 const MESSAGE_MAX_LENGTH = 300
 

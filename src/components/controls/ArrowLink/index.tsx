@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import classNames from 'classnames'
+import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
-import { ReactComponent as DownArrowIcon } from './assets/down-arrow.svg'
 import { SectionId } from 'utils/constants'
+import { ReactComponent as DownArrowIcon } from './assets/down-arrow.svg'
 
 const pageText = {
   moreInfo: 'more info',

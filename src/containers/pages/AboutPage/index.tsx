@@ -1,8 +1,8 @@
-import { createUseStyles } from 'react-jss'
-import Page from 'containers/pages/Page'
-import { SectionId } from 'utils/constants'
-import PersonalImage from './assets/christoph-haider.jpg'
 import classNames from 'classnames'
+import Page from 'containers/pages/Page'
+import { createUseStyles } from 'react-jss'
+import { SectionId } from 'utils/constants'
+import PersonalImage from './assets/christoph-haider.png'
 
 // This is a helper object before intl is in place
 const pageText = {
@@ -139,23 +139,6 @@ const WorkAndExperiencePage = () => {
               {pageText.aboutMe}
             </p>
           </div>
-          {/* <div className={classes.skillsContainer}> */}
-          {/* <blockquote className={classes.blockQuote}>
-              <QuoteIcon className={classes.leftQuote} />
-              <div className={classes.quoteText}>{pageText.quote}</div>
-              <div className={classes.quoteMe}>{pageText.quoteMe}</div>
-              <QuoteIcon className={classes.rightQuote} />
-            </blockquote>
-            {skills.map((skill) => (
-              <SkillBar
-                key={skill.label}
-                label={skill.label}
-                score={skill.score}
-                color={ThemeColor.primaryMain}
-              />
-            ))} */}
-          {/* <p className={classes.descriptionText}>{pageText.aboutMe}</p> */}
-          {/* </div> */}
         </div>
       </div>
     </Page>

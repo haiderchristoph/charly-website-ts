@@ -1,8 +1,7 @@
-import React from 'react'
-import { createUseStyles } from 'react-jss'
 import SocialItem from 'components/displays/SocialItem'
-import { ReactComponent as GithubSvg } from './assets/github.svg'
+import { createUseStyles } from 'react-jss'
 import { ReactComponent as FacebookSvg } from './assets/facebook.svg'
+import { ReactComponent as GithubSvg } from './assets/github.svg'
 import { ReactComponent as YouTubeSvg } from './assets/youtube.svg'
 
 const useStyles = createUseStyles({

@@ -2,14 +2,13 @@ import classNames from 'classnames'
 import { useRef, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { SectionId } from 'utils/constants'
-import { ReactComponent as BasicsSvg } from './assets/basics.svg'
-// import { ReactComponent as VSCodeSvg } from './assets/vscode.svg'
-import { ReactComponent as CodeQualitySvg } from './assets/codequality.svg'
-import { ReactComponent as FigmaSvg } from './assets/figma.svg'
-import { ReactComponent as TypescriptSvg } from './assets/typescript.svg'
-import { ReactComponent as DockerSvg } from './assets/docker.svg'
-import { ReactComponent as ReactSvg } from './assets/react.svg'
 import useMediaQuery from 'utils/hooks/useMediaQuery'
+import { ReactComponent as BasicsSvg } from './assets/basics.svg'
+import { ReactComponent as CodeQualitySvg } from './assets/codequality.svg'
+import { ReactComponent as DockerSvg } from './assets/docker.svg'
+import { ReactComponent as FigmaSvg } from './assets/figma.svg'
+import { ReactComponent as ReactSvg } from './assets/react.svg'
+import { ReactComponent as TypescriptSvg } from './assets/typescript.svg'
 
 const useStyles = createUseStyles(({ palette, typography }) => ({
   container: {
@@ -73,7 +72,6 @@ enum TechStackItemId {
   REACT = 'react',
   TYPESCRIPT = 'typescript',
   DOCKER = 'docker',
-  VSCODE = 'vscode',
   CODE_QUALITY = 'code-quality',
   FIGMA = 'figma',
 }
@@ -103,13 +101,6 @@ const items = [
     description: `Docker provides a consistent and reproducible environment for building, testing and deploying my applications. It eliminates the need for manual configuration and reduces the chances of compatibility issues between different environments, hence making it easier to collaborate.`,
     Icon: DockerSvg,
   },
-  // not used at the moment
-  // {
-  //   id: TechStackItemId.VSCODE,
-  //   title: 'VS Code',
-  //   description: `A powerful, lightweight and customizable code editor that provides a range of extensions to improve productivity and efficiency. With built-in support for popular web technologies and frameworks, VS Code helps me streamline the development process and make it easier to build high-quality web applications.`,
-  //   Icon: VSCodeSvg,
-  // },
   {
     id: TechStackItemId.CODE_QUALITY,
     title: 'Code quality & tools',

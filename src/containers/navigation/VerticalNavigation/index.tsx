@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import { SectionId } from 'utils/constants'
 
-import NavItem from 'components/displays/NavItem'
 import Socials from 'containers/navigation/Socials'
 import { ReactComponent as LogoSvg } from '../assets/logo.svg'
 

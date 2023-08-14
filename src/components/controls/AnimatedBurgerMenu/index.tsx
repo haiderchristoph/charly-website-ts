@@ -1,5 +1,5 @@
-import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
+import { createUseStyles } from 'react-jss'
 import { ReactComponent as BurgerMenuSvg } from './assets/burger.svg'
 
 const useStyles = createUseStyles(({ palette }) => ({

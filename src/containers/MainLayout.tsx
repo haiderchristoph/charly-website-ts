@@ -1,11 +1,11 @@
-import { createUseStyles } from 'react-jss'
-import LandingPage from 'containers/pages/LandingPage'
+import ThemeButton from 'components/controls/ThemeButton'
+import Navigation from 'containers/navigation/NavigationHandler'
 import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
-import Navigation from 'containers/navigation/NavigationHandler'
+import LandingPage from 'containers/pages/LandingPage'
 import TechStackPage from 'containers/pages/TechStackPage'
+import { createUseStyles } from 'react-jss'
 import Footer from './pages/Footer'
-import ThemeButton from 'components/controls/ThemeButton'
 
 const useStyles = createUseStyles(({ palette }) => ({
   container: {

@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import MainLayout from './containers/MainLayout'
-import { polyfill } from 'seamless-scroll-polyfill'
 import { ThemeProvider } from 'react-jss'
-import { lightTheme, darkTheme } from 'utils/theming/theme'
-import { ThemeMode } from 'utils/theming/constants'
-import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import { polyfill } from 'seamless-scroll-polyfill'
 import useLocalStorage from 'utils/hooks/useLocalStorage'
+import { ThemeMode } from 'utils/theming/constants'
+import { darkTheme, lightTheme } from 'utils/theming/theme'
+import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import MainLayout from './containers/MainLayout'
 
 function App() {
   const [initialThemeMode, setStorageThemeMode] = useLocalStorage<string>(

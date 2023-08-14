@@ -1,9 +1,9 @@
-import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import { ReactComponent as SunBeamsSvg } from './assets/sun-beams.svg'
 import { useContext } from 'react'
-import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import { createUseStyles } from 'react-jss'
 import { ThemeMode } from 'utils/theming/constants'
+import { ThemeModeContext } from 'utils/theming/ThemeModeContext/Context'
+import { ReactComponent as SunBeamsSvg } from './assets/sun-beams.svg'
 
 const useStyles = createUseStyles(({ palette }) => ({
   container: {

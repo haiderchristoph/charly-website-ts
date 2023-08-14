@@ -1,8 +1,8 @@
+import classNames from 'classnames'
 import 'intersection-observer'
 import { useRef } from 'react'
-import { createUseStyles } from 'react-jss'
-import classNames from 'classnames'
 import { useIsVisible } from 'react-is-visible'
+import { createUseStyles } from 'react-jss'
 
 const useStyles = (props: any) =>
   createUseStyles(({ palette, typography }) => ({
