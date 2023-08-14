@@ -4,7 +4,6 @@ import Page from 'containers/pages/Page'
 import React, { useEffect, useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { SectionId } from 'utils/constants'
-import { EmailJSCredentials } from 'utils/credentials'
 
 const MESSAGE_MAX_LENGTH = 300
 
@@ -189,10 +188,10 @@ const ContactPage = () => {
     setFormSendState(FormSendState.SENDING)
     emailjs
       .sendForm(
-        EmailJSCredentials.SERVICE_ID,
-        EmailJSCredentials.TEMPLATE_ID,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string,
         event.target as unknown as string,
-        EmailJSCredentials.USER_ID
+        process.env.REACT_APP_EMAILJS_USER_ID as string
       )
       .then(
         (result) => {
