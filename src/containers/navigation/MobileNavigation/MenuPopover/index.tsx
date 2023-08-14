@@ -3,8 +3,8 @@ import { createUseStyles } from 'react-jss'
 import { SectionId } from 'utils/constants'
 import { ReactComponent as LogoSvg } from '../../assets/logo.svg'
 
-import NavItem from 'components/displays/NavItem'
 import Socials from 'components/displays/Socials'
+import NavItem from 'containers/navigation/NavItem'
 
 const borderThickness = '3px'
 
@@ -73,7 +73,9 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
   },
   logoContainer: {
     backgroundColor: palette.primaryColor.main,
-    height: '3rem',
+    height: '3.5rem',
+    display: 'flex',
+    alignItems: 'center',
     width: '100%',
   },
   logo: {

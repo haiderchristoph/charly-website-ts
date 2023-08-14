@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 
@@ -14,13 +13,6 @@ const useStyles = createUseStyles({
     right: '1rem',
     top: '1rem',
     cursor: 'pointer',
-    '&$burgerMenuButton_open': {
-      // deactivate the background as it looks weird, at least temporarily
-      // background: 'rgba(29, 29, 29, 0.7)',
-      // borderRadius: '4px',
-      // transition: 'all 0.5s',
-    },
-    '&$burgerMenuButton_close': {},
   },
   themeButton: {
     position: 'fixed',
@@ -28,8 +20,6 @@ const useStyles = createUseStyles({
     right: '4rem',
     zIndex: 12,
   },
-  burgerMenuButton_close: {},
-  burgerMenuButton_open: {},
 })
 
 /**
@@ -56,10 +46,7 @@ const MobileNavigation = () => {
   return (
     <>
       <div
-        className={classNames(classes.burgerMenuButton, {
-          [classes.burgerMenuButton_close]: isMenuOpen,
-          [classes.burgerMenuButton_open]: !isMenuOpen,
-        })}
+        className={classes.burgerMenuButton}
         onClick={() => handleToggle(!isMenuOpen)}
         role="button"
       >

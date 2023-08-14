@@ -1,6 +1,8 @@
 import { createUseStyles } from 'react-jss'
 import './styles.scss'
 
+// ToDo: move component to separate repo
+
 const useStyles = createUseStyles({
   container: {
     position: 'absolute',

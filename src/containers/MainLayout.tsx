@@ -1,5 +1,5 @@
 import ThemeButton from 'components/controls/ThemeButton'
-import Navigation from 'containers/navigation/NavigationHandler'
+import Navigation from 'containers/navigation'
 import AboutPage from 'containers/pages/AboutPage'
 import ContactPage from 'containers/pages/ContactPage'
 import LandingPage from 'containers/pages/LandingPage'
