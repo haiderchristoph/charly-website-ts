@@ -8,7 +8,7 @@ export const SectionId = {
 }
 
 export const SocialLinks = {
-  GITHUB: 'https://github.com/haidercharly',
+  GITHUB: 'https://github.com/haiderchristoph',
   FACEBOOK: 'https://www.facebook.com/christoph.haider2',
   LINKEDIN: 'https://www.linkedin.com/in/christoph-charly-haider-a6935a251',
 }
