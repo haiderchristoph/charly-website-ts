@@ -8,7 +8,7 @@ import PersonalImage from './assets/christoph-haider.png'
 const pageText = {
   heading: 'about',
   descriptionTitle: `Me, myself and I`,
-  descriptionHeadline: `I'm a front-end developer for Usersnap in\xa0Linz,\xa0Austria.`,
+  descriptionHeadline: `I'm a front-end developer for Cloudflight in\xa0Amstetten,\xa0Austria.`,
   descriptionLower: `I'm a design enthusiast with a passion for everything related\xa0to\xa0front-end.`,
   workTogether: `Let's work together!`,
   aboutMe: `I enjoy exploring new technologies and JavaScript frameworks by working on side projects, as I find it's a great way to stay up-to-date with the latest trends. When I'm not working on web development projects you usually find me spending some quality time with my lovely family or grinding some Rocket\xa0League\xa0in\xa0my\xa0downtime.`,
