@@ -15,7 +15,7 @@
     "@types/react-jss": "10.0.0",
     "classnames": "2.3.2",
     "intersection-observer": "0.12.2",
-    "prettier": "^2.7.1",
+    "prettier": "2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-is-visible": "1.2.0",
