@@ -186,6 +186,7 @@ const ContactPage = () => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     setFormSendState(FormSendState.SENDING)
+    console.log(process.env.REACT_APP_EMAILJS_USER_ID as string)
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
