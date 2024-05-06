@@ -191,7 +191,7 @@ const ContactPage = () => {
         process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string,
         event.target as unknown as string,
-        process.env.REACT_APP_EMAILJS_USER_ID as string
+        { publicKey: process.env.REACT_APP_EMAILJS_USER_ID as string }
       )
       .then(
         (result) => {
