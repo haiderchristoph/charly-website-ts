@@ -22,6 +22,9 @@ const pageText = {
   answer within 48 hours.`,
   resultErrorHeading: 'Oh noes!',
   resultErrorText: `Something went wrong while submitting your message. Please reload the page and try it again!`,
+  writeMe: 'Write me a message to',
+  orFillOut: 'or fill out the form below',
+  email: ' christoph.haider@versusreality.at ',
 }
 
 const useStyles = createUseStyles(({ palette, typography }) => ({
@@ -41,6 +44,20 @@ const useStyles = createUseStyles(({ palette, typography }) => ({
     color: palette.primaryColor.main,
     textAlign: 'center',
     marginBottom: '1.5rem',
+  },
+  emailText: {
+    fontSize: typography.fontSize.medium,
+    textAlign: 'center',
+    marginBottom: '1.5rem',
+    lineHeight: 1.25,
+  },
+  emailLink: {
+    color: palette.primaryColor.main,
+    textDecoration: 'none',
+    '&:hover': {
+      color: palette.primaryColor.main,
+      borderBottom: `2px solid ${palette.primaryColor.main}`,
+    },
   },
   contentContainer: {
     display: 'flex',
@@ -227,6 +244,16 @@ const ContactPage = () => {
               onSubmit={handleSubmit}
             >
               <div className={classes.question}>{pageText.question}</div>
+              <div className={classes.emailText}>
+                {pageText.writeMe}
+                <a
+                  className={classes.emailLink}
+                  href="mailto:christoph.haider@versusreality.at"
+                >
+                  {pageText.email}
+                </a>
+                {pageText.orFillOut}
+              </div>
               <div>
                 <input
                   className={classes.textInput}
